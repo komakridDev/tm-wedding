@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatIconModule} from '@angular/material/icon';
+import {MatInputModule} from '@angular/material/input';
 
 import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
@@ -22,7 +23,7 @@ import { GiftPageComponent } from './gift-page/gift-page.component';
 import { AboutComponent } from './about/about.component';
 import { ContactPageComponent } from './contact-page/contact-page.component';
 import { InfoPageComponent } from './info-page/info-page.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatButtonModule,
     MatCheckboxModule,
     MatIconModule,
-    ReactiveFormsModule
+    MatInputModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

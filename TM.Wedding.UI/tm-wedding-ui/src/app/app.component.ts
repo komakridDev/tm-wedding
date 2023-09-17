@@ -1,6 +1,7 @@
 import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Observable, catchError, map, of } from 'rxjs';
 import { AuthguardService } from './authguard.service';
+import { AuthGuard } from './auth.guard';
 
 @Component({
   selector: 'app-root',
@@ -16,17 +17,22 @@ export class AppComponent implements AfterViewInit,  OnInit{
 
   userLoggedIn: Observable<boolean | Observable<boolean>> = of(true);
 
-  constructor(private AuthGuardservice: AuthguardService){}
+  constructor(private authGuardservice: AuthGuard){}
 
   ngOnInit(): void {
-    this.userLoggedIn = this.AuthGuardservice.getObservableToken().pipe(
-      map(e => {
-        return of(e);
-      }),
-      catchError((err) => {
-        return of(false);
-      })
-    );
+
+    this.authGuardservice.isLoggedIn$.subscribe((data) => {
+      this.userLoggedIn = of(data);
+    });
+
+    // this.userLoggedIn = this.AuthGuardservice.getObservableToken().pipe(
+    //   map(e => {
+    //     return of(e);
+    //   }),
+    //   catchError((err) => {
+    //     return of(false);
+    //   })
+    // );
   }
 
   ngAfterViewInit(): void {
