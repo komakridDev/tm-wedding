@@ -1,0 +1,30 @@
+p{
+    font-family: 'Roboto', sans-serif;
+}
+
+h3{
+    font-family: 'Roboto', sans-serif;
+    color:darkgray;
+}
+
+span{
+    font-family: 'Roboto', sans-serif;
+    color:rgb(123, 76, 37);
+}
+
+.couple-card{
+    width: 100%;
+    opacity:0.8;
+    height:100%;
+}
+
+.couple-card:hover{
+    opacity:1;
+    border:2px solid goldenrod;
+    border-radius:20px;
+    padding:20px
+}
+
+.coupleInfo-mainHeader{
+    padding-bottom:1rem;
+}
