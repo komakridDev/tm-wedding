@@ -22,6 +22,7 @@ import { GiftPageComponent } from './gift-page/gift-page.component';
 import { AboutComponent } from './about/about.component';
 import { ContactPageComponent } from './contact-page/contact-page.component';
 import { InfoPageComponent } from './info-page/info-page.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { InfoPageComponent } from './info-page/info-page.component';
     AppRoutingModule,
     MatButtonModule,
     MatCheckboxModule,
-    MatIconModule
+    MatIconModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,31 @@
+body,
+html {
+    height: 100%;
+}
+
+.bg {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url("../../assets/img/home.carousel.background.3.jpg");
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.center-screen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.error-container{
+    padding:20px;
+    border:1px solid #e1b7b7;
+    border-radius:4px;
+    background-color:#ffe2e7;
+}
+
+.overlay-div-header{
+    font-family: 'WeddingCaligraphic';
+    font-size:4rem;
+}

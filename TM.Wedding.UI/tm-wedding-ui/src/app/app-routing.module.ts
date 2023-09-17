@@ -8,16 +8,17 @@ import { GiftPageComponent } from './gift-page/gift-page.component';
 import { InfoPageComponent } from './info-page/info-page.component';
 import { ContactPageComponent } from './contact-page/contact-page.component';
 import { LoginComponent } from './login/login.component';
+import { AuthGuard } from './auth.guard';
 
 const routes: Routes = [
 
-  { path: '', component: HomeComponent },
-  { path: 'wedding', component: WeddingPageComponent },  
-  { path: 'about', component: AboutComponent },
-  { path: 'info', component: InfoPageComponent },
-  { path: 'rsvp', component: RsvpPageComponent },
-  { path: 'gifts', component: GiftPageComponent },
-  { path: 'contact', component: ContactPageComponent },
+  { path: '', component: HomeComponent, canActivate: [AuthGuard] },
+  { path: 'wedding', component: WeddingPageComponent, canActivate: [AuthGuard] },  
+  { path: 'about', component: AboutComponent, canActivate: [AuthGuard] },
+  { path: 'info', component: InfoPageComponent, canActivate: [AuthGuard] },
+  { path: 'rsvp', component: RsvpPageComponent, canActivate: [AuthGuard] },
+  { path: 'gifts', component: GiftPageComponent, canActivate: [AuthGuard] },
+  { path: 'contact', component: ContactPageComponent, canActivate: [AuthGuard] },
   { path: 'login', component: LoginComponent },
 ];
 
