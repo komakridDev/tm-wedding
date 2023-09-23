@@ -1,17 +1,22 @@
 <div class="count-down-timer">
-    <p>Countdown to {{ currentTime }}</p>
-    <div class="wrapper">
-      <div class="description">
-        <p>Days</p>
-        <p>Hours</p>
-        <p>Minutes</p>
-        <p>Seconds</p>
-      </div>
-      <div class="times">
-        <p #days></p>
-        <p #hours></p>
-        <p #minutes></p>
-        <p #seconds></p>
-      </div>
+  <p>Countdown to {{ currentTime }}</p>
+  <div class="wrapper">
+    <div class="description">
+      <p>Days</p>
+      <p>Hours</p>
+      <p>Minutes</p>
+      <p>Seconds</p>
+    </div>
+    <div class="times">
+      <p #days></p>
+      <p #hours></p>
+      <p #minutes></p>
+      <p #seconds></p>
     </div>
   </div>
+</div>
+<div style="margin-top:20px">
+  <div class="progress">
+    <div class="progress-bar bg-warning progress-bar-striped progress-bar-animated" role="progressbar"  aria-valuemin="0" aria-valuemax="100" [style.width.%]="percentage"></div>
+  </div>
+</div>

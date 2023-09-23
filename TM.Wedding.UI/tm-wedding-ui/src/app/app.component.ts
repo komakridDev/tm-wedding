@@ -24,15 +24,6 @@ export class AppComponent implements AfterViewInit,  OnInit{
     this.authGuardservice.isLoggedIn$.subscribe((data) => {
       this.userLoggedIn = of(data);
     });
-
-    // this.userLoggedIn = this.AuthGuardservice.getObservableToken().pipe(
-    //   map(e => {
-    //     return of(e);
-    //   }),
-    //   catchError((err) => {
-    //     return of(false);
-    //   })
-    // );
   }
 
   ngAfterViewInit(): void {

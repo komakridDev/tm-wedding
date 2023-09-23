@@ -6,6 +6,7 @@ import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
   styleUrls: ['./wedding-counter.component.css']
 })
 export class WeddingCounterComponent implements AfterViewInit {
+  percentage: number = 0;
   date: any;
   now: any;
   targetDate: any = new Date(2024, 7, 24, 19, 30, 0);
@@ -56,6 +57,20 @@ export class WeddingCounterComponent implements AfterViewInit {
       this.hours.nativeElement.innerText = 23 - this.date.getHours();
       this.minutes.nativeElement.innerText = 60 - this.date.getMinutes();
       this.seconds.nativeElement.innerText = 60 - this.date.getSeconds();
+    
+      this.setProgressBar(this.date);
+    }
+  }
+
+  setProgressBar(days:Date){
+    
+    if(this.difference){
+      const daysLeft =  Math.floor(this.difference);
+      const hoursLeft = this.date.getHours();
+      
+      if(daysLeft>0){
+        this.percentage = Math.round(((365-daysLeft)/365)*100);
+      }
     }
   }
 }
