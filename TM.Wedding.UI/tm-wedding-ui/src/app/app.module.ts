@@ -24,6 +24,7 @@ import { AboutComponent } from './about/about.component';
 import { ContactPageComponent } from './contact-page/contact-page.component';
 import { InfoPageComponent } from './info-page/info-page.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ThankYouComponent } from './thank-you/thank-you.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     GiftPageComponent,
     AboutComponent,
     ContactPageComponent,
-    InfoPageComponent
+    InfoPageComponent,
+    ThankYouComponent
   ],
   imports: [
     BrowserModule,

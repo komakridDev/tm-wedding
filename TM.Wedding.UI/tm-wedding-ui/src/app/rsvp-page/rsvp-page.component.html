@@ -1,102 +1,96 @@
-<div class="carousel-container">
-    <div>
-        <div id="homeHeaderCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4000">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="../../assets/img/rsvp.jpg" class="d-block w-100" alt="...">
+<div class="bg">
+    <div class="carousel-container">
+
+        <div class="overlay-div">
+            <div class="overlay-div-container">
+                <div class="container">
+                    <h1 class="overlay-div-header">Say you will be there</h1>
+                </div>
+                <div class="container overlay-div-sub-header">
+                    <h2>Please let us know if you can make it by
+                        July 10th at the latest, preesh!</h2>
                 </div>
             </div>
         </div>
     </div>
-    <div class="overlay-div">
-        <div class="overlay-div-container">
-            <div class="container">
-                <h1 class="overlay-div-header">Say you will be there</h1>
+    <div class="container" style="padding-top:40px">
+        <form [formGroup]="rsvpForm" (ngSubmit)="onSubmit()" style="text-align:left">
+            <div [ngStyle]="{'opacity':isLoading ? '0.5' : '1' }">
+                <div style="margin-bottom:20px">
+                    <div class="form-check">
+                        <label class="form-check-label" for="attendCeremony">Will you attend the wedding ceremony?</label>
+                        <input class="form-check-input" type="checkbox" id="attendCeremony" formControlName="attendCeremony" (change)="onCheckboxChange()">  
+                    </div>
+                      <div class="form-check">
+                        <label class="form-check-label" for="attendParty">Will you attend the party?</label>
+                        <input class="form-check-input" type="checkbox" id="attendParty" formControlName="attendParty" (change)="onCheckboxChange()">  
+                    </div>
+                </div>
+                <div [hidden]="!submitterWillAttend">
+                    <h4>Contact Details <i class="bi bi-person-bounding-box" style="padding-left:4px"></i></h4>
+                    <div style="margin-bottom:20px">
+                        <input id="submitterName" name="submitterName" formControlName="submitterName"
+                            placeholder="Enter your first name" class="form-control">
+                    </div>
+                    <div style="margin-bottom:20px">
+                        <input id="submitterSurname" name="submitterSurname" formControlName="submitterSurname"
+                            placeholder="Enter your last name" class="form-control">
+                    </div>
+                    <div style="margin-bottom:20px">
+                        <input id="phone" name="phone" formControlName="phone"
+                            placeholder="Enter your phone number" class="form-control">
+                    </div>
+                    <div style="margin-bottom:20px">
+                        <input id="email" name="email" formControlName="email"
+                            placeholder="Enter your email address" class="form-control" type="email">
+                    </div>
+                </div>
+                <div [hidden]="!submitterWillAttend">
+                    <h4>Reservation Details <i class="bi bi-ui-radios" style="padding-left:4px"></i></h4>
+                    <label for="peopleCount">Number of people</label>
+                    <div style="margin-bottom:20px">
+                        <input id="peopleCount" name="peopleCount" formControlName="peopleCount"
+                            type="number" min="1" max="20" class="form-control" (change)="onPeopleCountChange()">
+                    </div>
+                    <div style="margin-bottom:20px">
+                        <table style="width:100%">
+                            <tr>
+                                <td><i class="bi bi-person-fill-check"></i></td>
+                                <td><input value="Kosmas Makridis" class="form-control" disabled></td>
+                            </tr>
+                            <tr *ngFor="let person of attendees; index as i">
+                                <td><i class="bi bi-person-fill-check"></i></td>
+                                <td><input id="attendRow{{i}}" placeholder="Enter the fullname of the attendee" class="form-control"  (change)="onAttendeeChange(i)"></td>                    
+                            </tr>
+                        </table>
+                    </div>
+                    <div style="margin-bottom:20px">
+                        <textarea id="comments" name="comments" formControlName="comments"
+                            placeholder="Enter any additional comments" class="form-control" rows="4"></textarea>
+                    </div>
+                </div>
             </div>
-            <div class="container overlay-div-sub-header">
-                <h2>Please let us know if you can make it by
-                    July 10th at the latest, preesh!</h2>
+    
+            <div class="form-inline" style="padding:20px 0px;text-align: center;">
+                <button class="btn btn-lg btn-success" type="submit" style="margin-right:5px;width:100%;max-width:800px"
+                    [disabled]="isLoading || !rsvpForm.valid || !submitterWillAttend"><i class="bi bi-envelope-open-heart" style="padding-right:8px"></i>Submit RSVP</button>
             </div>
-        </div>
+    
+            <div class="form-inline" style="padding:40px 0px;" [hidden]="!isLoading">
+                <div class="spinner-border text-primary" role="status">
+                </div>
+                <div>
+                    <h4 style="padding-left:20px;color:rgb(23, 23, 23)">Submitting...</h4>
+                </div>
+            </div>
+    
+            <div class="form-inline errorMsg" [hidden]="errorMessage.length===0">
+                <div class=error-container>
+                    <span style="padding-left:20px;color:rgb(224, 32, 32)"><i class="bi bi-emoji-frown"
+                            style="padding-right:4px"></i>{{errorMessage}}</span>
+                </div>
+            </div>
+    
+        </form>
     </div>
-</div>
-<div class="container" style="padding-top:40px">
-    <form [formGroup]="rsvpForm" (ngSubmit)="onSubmit()" style="text-align:left">
-        <div [ngStyle]="{'opacity':isLoading ? '0.5' : '1' }">
-            <div style="margin-bottom:20px">
-                <div class="form-check">
-                    <label class="form-check-label" for="attendCeremony">Will you attend the wedding ceremony?</label>
-                    <input class="form-check-input" type="checkbox" id="attendCeremony" formControlName="attendCeremony" (change)="onCheckboxChange()">  
-                </div>
-                  <div class="form-check">
-                    <label class="form-check-label" for="attendParty">Will you attend the party?</label>
-                    <input class="form-check-input" type="checkbox" id="attendParty" formControlName="attendParty" (change)="onCheckboxChange()">  
-                </div>
-            </div>
-            <div [hidden]="!submitterWillAttend">
-                <h4>Contact Details <i class="bi bi-person-bounding-box" style="padding-left:4px"></i></h4>
-                <div style="margin-bottom:20px">
-                    <input id="submitterName" name="submitterName" formControlName="submitterName"
-                        placeholder="Enter your first name" class="form-control">
-                </div>
-                <div style="margin-bottom:20px">
-                    <input id="submitterSurname" name="submitterSurname" formControlName="submitterSurname"
-                        placeholder="Enter your last name" class="form-control">
-                </div>
-                <div style="margin-bottom:20px">
-                    <input id="phone" name="phone" formControlName="phone"
-                        placeholder="Enter your phone number" class="form-control">
-                </div>
-                <div style="margin-bottom:20px">
-                    <input id="email" name="email" formControlName="email"
-                        placeholder="Enter your email address" class="form-control" type="email">
-                </div>
-            </div>
-            <div [hidden]="!submitterWillAttend">
-                <h4>Reservation Details <i class="bi bi-ui-radios" style="padding-left:4px"></i></h4>
-                <label for="peopleCount">Number of people</label>
-                <div style="margin-bottom:20px">
-                    <input id="peopleCount" name="peopleCount" formControlName="peopleCount"
-                        type="number" min="1" max="20" class="form-control" (change)="onPeopleCountChange()">
-                </div>
-                <div style="margin-bottom:20px">
-                    <table style="width:100%">
-                        <tr>
-                            <td><i class="bi bi-person-fill-check"></i></td>
-                            <td><input value="Kosmas Makridis" class="form-control" disabled></td>
-                        </tr>
-                        <tr *ngFor="let person of attendees; index as i">
-                            <td><i class="bi bi-person-fill-check"></i></td>
-                            <td><input placeholder="Enter the fullname of the attendee" class="form-control"></td>                    
-                        </tr>
-                    </table>
-                </div>
-                <div style="margin-bottom:20px">
-                    <textarea id="comments" name="comments" formControlName="comments"
-                        placeholder="Enter any additional comments" class="form-control" rows="4"></textarea>
-                </div>
-            </div>
-        </div>
-
-        <div class="form-inline" style="padding:20px 0px;">
-            <button class="btn btn-md btn-primary" type="submit" style="margin-right:5px"
-                [disabled]="isLoading || !rsvpForm.valid || !submitterWillAttend">Submit RSVP</button>
-        </div>
-
-        <div class="form-inline" style="padding:40px 0px;" [hidden]="!isLoading">
-            <div class="spinner-border text-primary" role="status">
-            </div>
-            <div>
-                <h4 style="padding-left:20px;color:rgb(23, 23, 23)">Submitting...</h4>
-            </div>
-        </div>
-
-        <div class="form-inline errorMsg" [hidden]="errorMessage.length===0">
-            <div class=error-container>
-                <span style="padding-left:20px;color:rgb(224, 32, 32)"><i class="bi bi-emoji-frown"
-                        style="padding-right:4px"></i>{{errorMessage}}</span>
-            </div>
-        </div>
-
-    </form>
 </div>

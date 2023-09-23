@@ -9,6 +9,7 @@ import { InfoPageComponent } from './info-page/info-page.component';
 import { ContactPageComponent } from './contact-page/contact-page.component';
 import { LoginComponent } from './login/login.component';
 import { AuthGuard } from './auth.guard';
+import { ThankYouComponent } from './thank-you/thank-you.component';
 
 const routes: Routes = [
 
@@ -19,6 +20,7 @@ const routes: Routes = [
   { path: 'rsvp', component: RsvpPageComponent, canActivate: [AuthGuard] },
   { path: 'gifts', component: GiftPageComponent, canActivate: [AuthGuard] },
   { path: 'contact', component: ContactPageComponent, canActivate: [AuthGuard] },
+  { path: 'thankyou', component: ThankYouComponent, canActivate: [AuthGuard] },
   { path: 'login', component: LoginComponent },
 ];
 
