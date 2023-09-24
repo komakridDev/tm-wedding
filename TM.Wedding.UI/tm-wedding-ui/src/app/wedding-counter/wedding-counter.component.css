@@ -2,7 +2,7 @@
     box-shadow: 2px 6px 9px 2px rgb(0 0 0 / 20%);
     text-align: center;
     background-color: #313b3f;
-    max-width: 400px;
+    max-width: 800px;
     margin: 20px auto;
     color: #d9a74a;
     border-radius: 6px;
@@ -47,11 +47,5 @@
             }
 
         }
-    }
-}
-
-@media screen and (max-width: 430px) {
-    .count-down-timer {
-        margin: 20px;
     }
 }

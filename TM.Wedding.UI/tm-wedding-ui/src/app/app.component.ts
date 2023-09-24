@@ -2,6 +2,8 @@ import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angula
 import { Observable, catchError, map, of } from 'rxjs';
 import { AuthguardService } from './authguard.service';
 import { AuthGuard } from './auth.guard';
+import { ActivatedRoute, Route, Router } from '@angular/router';
+import { SharedService } from './shared.service';
 
 @Component({
   selector: 'app-root',
@@ -15,29 +17,46 @@ export class AppComponent implements AfterViewInit,  OnInit{
   @ViewChild('options') text: ElementRef | undefined;
   @ViewChild('button') btn: ElementRef | undefined;
 
-  userLoggedIn: Observable<boolean | Observable<boolean>> = of(true);
+  userLoggedIn: boolean = false;
+  isAudioPlaying: boolean =  false;
 
-  constructor(private authGuardservice: AuthGuard){}
+  constructor(private authGuardservice: AuthGuard, private sharedService: SharedService){}
 
   ngOnInit(): void {
 
-    this.authGuardservice.isLoggedIn$.subscribe((data) => {
-      this.userLoggedIn = of(data);
+    this.sharedService.userLoggedIn$.subscribe((flag) => {
+      this.userLoggedIn = flag;
     });
   }
 
   ngAfterViewInit(): void {
 
-    if (this.audio && this.text) {
-      this.audio.nativeElement.play();
-      this.text.nativeElement.innerHTML = `autoplay: ${this.audio.nativeElement.autoplay ? 'on' : 'off'
-        } loop: ${this.audio.nativeElement.loop} muted: ${this.audio.nativeElement.muted
-        }`;
-    }
+    setTimeout(() => {
+      if(!this.isAudioPlaying){
+        this.startAudioInBackground();
+      }
+    }, 2000);
 
-    if (this.audio && this.btn) {
-      this.btn.nativeElement.click();
-      this.audio.nativeElement.play();
+  }
+
+  startAudioInBackground(){
+
+    try{
+      if (this.audio && this.text) {
+        this.text.nativeElement.innerHTML = `autoplay: ${this.audio.nativeElement.autoplay ? 'on' : 'off'
+          } loop: ${this.audio.nativeElement.loop} muted: ${this.audio.nativeElement.muted
+          }`;
+      }
+      
+      if (this.audio && this.btn) {
+        this.btn.nativeElement.click();
+        this.audio.nativeElement.play();
+        this.isAudioPlaying = true;
+        console.log("Start background audio music");
+      }
+    }
+    catch(err){
+      this.isAudioPlaying = false;
     }
   }
 }

@@ -40,7 +40,7 @@ export class LoginComponent {
     setTimeout(() => {
       this.isLoading = false;
       this.loginForm.reset();
-      this.router.navigate(['']);
+      window.location.href = '';
     }, 2000);
    }else{
     this.isLoading = false;

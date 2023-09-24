@@ -14,6 +14,7 @@ export class RsvpPageComponent {
   attendParty: FormControl;
   submitterName: FormControl;
   submitterSurname: FormControl;
+  submitterFullName: FormControl
   email: FormControl;
   phone: FormControl;
   peopleCount: FormControl<number | null>;
@@ -32,6 +33,7 @@ export class RsvpPageComponent {
     this.attendParty = new FormControl(false, [Validators.required]);
     this.submitterName = new FormControl('', [Validators.required]);
     this.submitterSurname = new FormControl('', [Validators.required]);
+    this.submitterFullName = new FormControl('');
     this.email = new FormControl('');
     this.phone = new FormControl('', [Validators.required]);
     this.peopleCount = new FormControl(1, [Validators.required]);
@@ -47,8 +49,11 @@ export class RsvpPageComponent {
       phone: this.phone,
       peopleCount: this.peopleCount,
       subscribeFlag: this.subscribeFlag,
-      comments: this.comments
+      comments: this.comments,
+      submitterFullName: this.submitterFullName
     });
+
+    this.rsvpForm.get('submitterFullName')?.disable();
   }
 
   onSubmit() {
@@ -68,6 +73,10 @@ export class RsvpPageComponent {
       this.errorMessage = "There was an error during submission please try again!"
     }
 
+  }
+
+  onSubmitterChange(){
+    this.submitterFullName.setValue(this.rsvpForm.controls['submitterName'].value + ' ' + this.rsvpForm.controls['submitterSurname'].value);
   }
 
   onCheckboxChange(){

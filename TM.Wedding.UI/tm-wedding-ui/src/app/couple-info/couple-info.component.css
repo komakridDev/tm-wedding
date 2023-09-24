@@ -8,8 +8,9 @@ h3{
 }
 
 span{
-    font-family: 'Roboto', sans-serif;
-    color:rgb(123, 76, 37);
+    font-family: 'Raleway', sans-serif;
+    font-size:1.2rem;
+    color:#d9a74a;
 }
 
 .couple-card{
@@ -19,6 +20,13 @@ span{
 }
 
 .couple-card:hover{
+    opacity:1;
+    border:2px solid goldenrod;
+    border-radius:20px;
+    padding:20px
+}
+
+.couple-card:active{
     opacity:1;
     border:2px solid goldenrod;
     border-radius:20px;

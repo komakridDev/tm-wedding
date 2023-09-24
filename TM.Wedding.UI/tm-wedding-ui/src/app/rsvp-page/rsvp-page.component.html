@@ -13,8 +13,8 @@
         </div>
     </div>
     <div class="container" style="padding-top:40px">
-        <form [formGroup]="rsvpForm" (ngSubmit)="onSubmit()" style="text-align:left">
-            <div [ngStyle]="{'opacity':isLoading ? '0.5' : '1' }">
+        <form [formGroup]="rsvpForm" (ngSubmit)="onSubmit()" style="text-align:left;">
+            <div [ngStyle]="{'opacity':isLoading ? '0.5' : '1' }" style="background-color: rgba(255, 255, 255, 0.2)">
                 <div style="margin-bottom:20px">
                     <div class="form-check">
                         <label class="form-check-label" for="attendCeremony">Will you attend the wedding ceremony?</label>
@@ -29,11 +29,11 @@
                     <h4>Contact Details <i class="bi bi-person-bounding-box" style="padding-left:4px"></i></h4>
                     <div style="margin-bottom:20px">
                         <input id="submitterName" name="submitterName" formControlName="submitterName"
-                            placeholder="Enter your first name" class="form-control">
+                            placeholder="Enter your first name" class="form-control" (change)="onSubmitterChange()">
                     </div>
                     <div style="margin-bottom:20px">
                         <input id="submitterSurname" name="submitterSurname" formControlName="submitterSurname"
-                            placeholder="Enter your last name" class="form-control">
+                            placeholder="Enter your last name" class="form-control" (change)="onSubmitterChange()">
                     </div>
                     <div style="margin-bottom:20px">
                         <input id="phone" name="phone" formControlName="phone"
@@ -55,7 +55,7 @@
                         <table style="width:100%">
                             <tr>
                                 <td><i class="bi bi-person-fill-check"></i></td>
-                                <td><input value="Kosmas Makridis" class="form-control" disabled></td>
+                                <td><input formControlName="submitterFullName" class="form-control"></td>
                             </tr>
                             <tr *ngFor="let person of attendees; index as i">
                                 <td><i class="bi bi-person-fill-check"></i></td>
