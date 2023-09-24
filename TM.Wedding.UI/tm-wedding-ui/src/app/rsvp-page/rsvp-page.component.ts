@@ -1,14 +1,15 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import emailjs from '@emailjs/browser';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
   selector: 'app-rsvp-page',
   templateUrl: './rsvp-page.component.html',
   styleUrls: ['./rsvp-page.component.css']
 })
-export class RsvpPageComponent {
+export class RsvpPageComponent implements OnDestroy {
   rsvpForm: FormGroup;
   attendCeremony: FormControl;
   attendParty: FormControl;
@@ -26,7 +27,7 @@ export class RsvpPageComponent {
   attendees: string[] = [];
   private _atteendees: string[] = [];
 
-  constructor(private router: Router) {
+  constructor(private router: Router, private spinner: NgxSpinnerService) {
     this.errorMessage = '';
     this.isLoading = false;
     this.attendCeremony = new FormControl(false, [Validators.required]);
@@ -55,21 +56,26 @@ export class RsvpPageComponent {
 
     this.rsvpForm.get('submitterFullName')?.disable();
   }
+  ngOnDestroy(): void {
+    this.isLoading = false;
+  }
 
   onSubmit() {
     this.isLoading = true;
+    this.spinner.show();
 
     try{
       setTimeout(() => {
         this.sendRsvpResponse();
         this.rsvpForm.reset();
-        this.isLoading = false;
         this.router.navigateByUrl("/thankyou");
-      }, 2000);
+        this.spinner.hide();
+      }, 4000);
 
     }
     catch(err){
       this.isLoading = false;
+      this.spinner.hide();
       this.errorMessage = "There was an error during submission please try again!"
     }
 

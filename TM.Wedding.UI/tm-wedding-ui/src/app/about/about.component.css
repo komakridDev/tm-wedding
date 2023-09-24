@@ -120,3 +120,59 @@
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+.fadeInTop{
+    -webkit-animation: fadeInTop 1.2s both;
+    -moz-animation: fadeInTop 1.2s both;
+    -o-animation: fadeInTop 1.2s both;
+    animation: fadeInTop 1.2s both;
+}
+
+@-webkit-keyframes fadeInTop{
+    0%{
+        opacity:0;
+        -webkit-transform: translateY(-50px);
+    }
+    100%{
+        opacity:1;
+        -webkit-transform: translateY(0px);
+    }
+}
+
+/* Animations */
+.fade-in {
+    opacity: 0;
+    transition: opacity 1s ease-in;
+  }
+  
+  .fade-in.appear {
+    opacity: 1;
+  }
+
+  .from-left {
+    grid-column: 2 / 3;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+  }
+  
+  .from-right {
+    grid-column: 3 / 4;
+    -webkit-transform: translateX(50%);
+    transform: translateX(50%);
+  }
+  
+  .from-left,
+  .from-right {
+    transition: opacity 400ms ease-in, -webkit-transform 800ms ease-in;
+    transition: opacity 400ms ease-in, transform 800ms ease-in;
+    transition: opacity 400ms ease-in, transform 800ms ease-in,
+      -webkit-transform 800ms ease-in;
+    opacity: 0;
+  }
+  
+  .from-left.appear,
+  .from-right.appear {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+  }

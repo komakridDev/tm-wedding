@@ -1,4 +1,9 @@
-<div class="bg">
+<div class="container" [hidden]="!isLoading">
+    <ngx-spinner bdColor="rgba(0, 0, 0, 1)" size="medium" color="#f5d15a" type="square-jelly-box" [fullScreen]="true" [showSpinner]="true">
+        <h1 style="color: #f5d15a;font-family: 'Raleway', sans-serif;"> Loading... </h1>
+    </ngx-spinner>
+  </div>
+<div class="bg" [hidden]="isLoading">
     <div class="carousel-container">
         <div class="overlay-div">
             <div class="overlay-div-container">

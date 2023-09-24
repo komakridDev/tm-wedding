@@ -1,5 +1,6 @@
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -25,6 +26,7 @@ import { ContactPageComponent } from './contact-page/contact-page.component';
 import { InfoPageComponent } from './info-page/info-page.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ThankYouComponent } from './thank-you/thank-you.component';
+import { NgxSpinnerModule } from 'ngx-spinner';
 
 @NgModule({
   declarations: [
@@ -53,8 +55,14 @@ import { ThankYouComponent } from './thank-you/thank-you.component';
     MatIconModule,
     MatInputModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    NgxSpinnerModule.forRoot({type: 'square-jelly-box'})
   ],
+  exports: [
+    NgxSpinnerModule
+  ],
+  schemas:[CUSTOM_ELEMENTS_SCHEMA],
   providers: [],
   bootstrap: [AppComponent]
 })
