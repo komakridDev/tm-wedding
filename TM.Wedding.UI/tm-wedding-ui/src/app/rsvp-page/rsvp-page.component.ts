@@ -1,4 +1,4 @@
-import { Component, OnDestroy } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import emailjs from '@emailjs/browser';
@@ -9,7 +9,7 @@ import { NgxSpinnerService } from 'ngx-spinner';
   templateUrl: './rsvp-page.component.html',
   styleUrls: ['./rsvp-page.component.css']
 })
-export class RsvpPageComponent implements OnDestroy {
+export class RsvpPageComponent implements OnInit, OnDestroy {
   rsvpForm: FormGroup;
   attendCeremony: FormControl;
   attendParty: FormControl;
@@ -55,6 +55,14 @@ export class RsvpPageComponent implements OnDestroy {
     });
 
     this.rsvpForm.get('submitterFullName')?.disable();
+  }
+  ngOnInit(): void {
+    this.isLoading = true;
+    this.spinner.show();
+    setTimeout(() => {
+      this.spinner.hide();
+      this.isLoading = false;
+    }, 2000);
   }
   ngOnDestroy(): void {
     this.isLoading = false;

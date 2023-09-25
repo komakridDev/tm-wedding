@@ -1,6 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 @import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@500&family=Lato&family=Poppins:wght@500&family=Raleway&family=Roboto:wght@100;400&family=Tilt+Prism&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@500&family=Lato&family=Major+Mono+Display&family=Poppins:wght@500&family=Raleway&family=Roboto:wght@100;400&family=Tilt+Prism&display=swap');
 
 @font-face {
     font-family: 'WeddingCaligraphic';

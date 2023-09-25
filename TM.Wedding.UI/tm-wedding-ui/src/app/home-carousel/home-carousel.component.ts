@@ -40,6 +40,5 @@ export class HomeCarouselComponent implements OnInit{
     sliders.forEach(slider => {
       appearOnScroll.observe(slider);
     });
-
   }
 }
