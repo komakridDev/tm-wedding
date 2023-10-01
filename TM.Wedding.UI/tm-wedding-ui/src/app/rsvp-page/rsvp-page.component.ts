@@ -21,11 +21,15 @@ export class RsvpPageComponent implements OnInit, OnDestroy {
   peopleCount: FormControl<number | null>;
   subscribeFlag: FormControl;
   comments: FormControl;
+  generalAttend: FormControl;
   errorMessage: string;
   isLoading: boolean = false;
   submitterWillAttend: boolean = false;
   attendees: string[] = [];
   private _atteendees: string[] = [];
+  generalAttendanceFlag: string | undefined;
+  noAttendance: boolean = true;
+  noAnswer: boolean = true;
 
   constructor(private router: Router, private spinner: NgxSpinnerService) {
     this.errorMessage = '';
@@ -36,10 +40,11 @@ export class RsvpPageComponent implements OnInit, OnDestroy {
     this.submitterSurname = new FormControl('', [Validators.required]);
     this.submitterFullName = new FormControl('');
     this.email = new FormControl('');
-    this.phone = new FormControl('', [Validators.required]);
-    this.peopleCount = new FormControl(1, [Validators.required]);
+    this.phone = new FormControl('');
+    this.peopleCount = new FormControl(1);
     this.subscribeFlag = new FormControl(false);
     this.comments = new FormControl('');
+    this.generalAttend = new FormControl(undefined, [Validators.required]);
 
     this.rsvpForm = new FormGroup({
       attendCeremony: this.attendCeremony,
@@ -51,9 +56,12 @@ export class RsvpPageComponent implements OnInit, OnDestroy {
       peopleCount: this.peopleCount,
       subscribeFlag: this.subscribeFlag,
       comments: this.comments,
-      submitterFullName: this.submitterFullName
+      submitterFullName: this.submitterFullName,
+      generalAttend: this.generalAttend
     });
 
+    this.rsvpForm.get('attendCeremony')?.disable();
+    this.rsvpForm.get('attendParty')?.disable();
     this.rsvpForm.get('submitterFullName')?.disable();
   }
   ngOnInit(): void {
@@ -100,6 +108,20 @@ export class RsvpPageComponent implements OnInit, OnDestroy {
     this.submitterWillAttend =  willAttendChurch || willAttendParty;
   }
 
+  onRadioChange(){
+    this.noAnswer = !this.rsvpForm.controls['generalAttend'].value;
+    this.generalAttendanceFlag = this.rsvpForm.controls['generalAttend'].value;
+    this.noAttendance = !this.generalAttendanceFlag || this.generalAttendanceFlag === 'No';
+
+    if(this.noAttendance){
+      this.rsvpForm.get('attendCeremony')?.disable();
+      this.rsvpForm.get('attendParty')?.disable();
+    }else{
+      this.rsvpForm.get('attendCeremony')?.enable();
+      this.rsvpForm.get('attendParty')?.enable();
+    }
+  }
+
   onPeopleCountChange(){
     var numberOfPeople = this.rsvpForm.controls['peopleCount'].value as number;
     this.attendees = []
@@ -129,17 +151,32 @@ export class RsvpPageComponent implements OnInit, OnDestroy {
     const submitterFullName = this.rsvpForm.controls['submitterName'].value + ' ' + this.rsvpForm.controls['submitterSurname'].value; 
 
     emailjs.init("6cKvFXLfFf7eDWXKQ");
-    emailjs.send("service_vjkvo97","template_eit5n88",{
-      rsvp_name: this.rsvpForm.controls['submitterName'].value,
-      rsvp_lastname: this.rsvpForm.controls['submitterSurname'].value,
-      rsvp_phone: this.rsvpForm.controls['phone'].value,
-      rsvp_email: this.rsvpForm.controls['email'].value,
-      rsvp_ceremony: ((this.rsvpForm.controls['attendCeremony'].value)??false)? 'Yes' : 'No',
-      rsvp_party: (this.rsvpForm.controls['attendParty'].value ??false) ? 'Yes' : 'No',
-      rsvp_people_count: this.rsvpForm.controls['peopleCount'].value,
-      rsvp_people: submitterFullName + (this._atteendees.length>0 ? ', ' : '') + this._atteendees.join(', '),
-      rsvp_comments: this.rsvpForm.controls['comments'].value,
-    });
+
+    if(this.noAttendance){
+      emailjs.send("service_vjkvo97","template_eit5n88",{
+        rsvp_name: this.rsvpForm.controls['submitterName'].value,
+        rsvp_lastname: this.rsvpForm.controls['submitterSurname'].value,
+        rsvp_phone: this.rsvpForm.controls['phone'].value,
+        rsvp_email: this.rsvpForm.controls['email'].value,
+        rsvp_ceremony: 'No',
+        rsvp_party: 'No',
+        rsvp_people_count: 0,
+        rsvp_people: '',
+        rsvp_comments: 'I will not come to the wedding: '+this.rsvpForm.controls['comments'].value,
+      });
+    }else{
+      emailjs.send("service_vjkvo97","template_eit5n88",{
+        rsvp_name: this.rsvpForm.controls['submitterName'].value,
+        rsvp_lastname: this.rsvpForm.controls['submitterSurname'].value,
+        rsvp_phone: this.rsvpForm.controls['phone'].value,
+        rsvp_email: this.rsvpForm.controls['email'].value,
+        rsvp_ceremony: ((this.rsvpForm.controls['attendCeremony'].value)??false)? 'Yes' : 'No',
+        rsvp_party: (this.rsvpForm.controls['attendParty'].value ??false) ? 'Yes' : 'No',
+        rsvp_people_count: this.rsvpForm.controls['peopleCount'].value,
+        rsvp_people: submitterFullName + (this._atteendees.length>0 ? ', ' : '') + this._atteendees.join(', '),
+        rsvp_comments: this.rsvpForm.controls['comments'].value,
+      });
+    }
 
   }
 }

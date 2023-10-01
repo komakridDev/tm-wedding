@@ -58,18 +58,21 @@ export class WeddingCounterComponent implements AfterViewInit {
       this.minutes.nativeElement.innerText = 60 - this.date.getMinutes();
       this.seconds.nativeElement.innerText = 60 - this.date.getSeconds();
     
-      this.setProgressBar(this.date);
+      this.setProgressBar(
+        Math.floor(this.difference), 
+        23 - this.date.getHours(),
+        60 - this.date.getMinutes());
     }
   }
 
-  setProgressBar(days:Date){
+  setProgressBar(daysRemaining: number, hoursRemaining: number, minutesRemaining: number){
     
     if(this.difference){
-      const daysLeft =  Math.floor(this.difference);
-      const hoursLeft = this.date.getHours();
+      const totalTime = 525600;
+      const timeLeft =  (daysRemaining*60*24) + (hoursRemaining*60) + minutesRemaining;
       
-      if(daysLeft>0){
-        this.percentage = Math.round(((365-daysLeft)/365)*100);
+      if(timeLeft>0){
+        this.percentage = Math.round(((totalTime-timeLeft)/totalTime)*100);
       }
     }
   }
