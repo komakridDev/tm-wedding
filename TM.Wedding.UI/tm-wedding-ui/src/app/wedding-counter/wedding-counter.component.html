@@ -1,11 +1,11 @@
 <div class="count-down-timer">
-  <p>Countdown to {{ currentTime }}</p>
+  <p>{{languageConfig.properties.get('home_ctr_label')}}</p>
   <div class="wrapper">
     <div class="description">
-      <p>Days</p>
-      <p>Hours</p>
-      <p>Minutes</p>
-      <p>Seconds</p>
+      <p>{{languageConfig.properties.get('home_ctr_days')}}</p>
+      <p>{{languageConfig.properties.get('home_ctr_hours')}}</p>
+      <p>{{languageConfig.properties.get('home_ctr_mins')}}</p>
+      <p>{{languageConfig.properties.get('home_ctr_sec')}}</p>
     </div>
     <div class="times">
       <p #days></p>

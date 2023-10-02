@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { LanguageCofig, LanguageService } from '../language.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-home-details',
@@ -6,8 +8,26 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home-details.component.css']
 })
 export class HomeDetailsComponent implements OnInit {
+
+  languageConfig: LanguageCofig;
+  private languageConfigSubscription: Subscription | undefined;
+  
+  constructor(private languageService : LanguageService){
+    this.languageConfig = languageService.defaultLanuageConfig;
+  }
+
   ngOnInit(): void {
     this.setAnimations();
+    
+    this.languageConfigSubscription = this.languageService.languageConfig$.subscribe((config) => {
+      this.languageConfig = config;
+    });
+  }
+
+  ngOnDestroy(): void {
+    if(this.languageConfigSubscription){
+      this.languageConfigSubscription?.unsubscribe();
+    }
   }
 
   setAnimations(){

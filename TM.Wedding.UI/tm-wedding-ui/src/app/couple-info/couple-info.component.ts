@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { LanguageCofig, LanguageService } from '../language.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-couple-info',
@@ -6,11 +8,27 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./couple-info.component.css']
 })
 export class CoupleInfoComponent implements OnInit {
+
+  languageConfig: LanguageCofig;
+  private languageConfigSubscription: Subscription | undefined;
   
-  ngOnInit(): void {
-    this.setAnimations();
+  constructor(private languageService : LanguageService){
+    this.languageConfig = languageService.defaultLanuageConfig;
   }
 
+  ngOnInit(): void {
+    this.setAnimations();
+    
+    this.languageConfigSubscription = this.languageService.languageConfig$.subscribe((config) => {
+      this.languageConfig = config;
+    });
+  }
+
+  ngOnDestroy(): void {
+    if(this.languageConfigSubscription){
+      this.languageConfigSubscription?.unsubscribe();
+    }
+  }
 
   setAnimations(){
     const faders = document.querySelectorAll(".fade-in");

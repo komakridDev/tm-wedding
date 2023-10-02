@@ -8,3 +8,15 @@
 .nav-link{
   color:white;
 }
+
+.languageContainer{
+  text-align: right;
+  margin-top:2.1rem
+}
+
+@media screen and (max-width: 1000px) {
+  .languageContainer{
+    text-align: right;
+    margin-top:2.0rem
+  }
+}

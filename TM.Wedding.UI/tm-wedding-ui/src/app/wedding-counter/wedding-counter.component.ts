@@ -1,15 +1,17 @@
-import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { LanguageCofig, LanguageService } from '../language.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-wedding-counter',
   templateUrl: './wedding-counter.component.html',
   styleUrls: ['./wedding-counter.component.css']
 })
-export class WeddingCounterComponent implements AfterViewInit {
+export class WeddingCounterComponent implements OnInit, AfterViewInit, OnDestroy {
   percentage: number = 0;
   date: any;
   now: any;
-  targetDate: any = new Date(2024, 7, 24, 19, 30, 0);
+  targetDate: Date = new Date(2024, 7, 24, 19, 30, 0);
   targetTime: any = this.targetDate.getTime();
   difference: number | undefined;
   months: Array<string> = [
@@ -35,17 +37,31 @@ export class WeddingCounterComponent implements AfterViewInit {
   @ViewChild('minutes', { static: true }) minutes: ElementRef | undefined;
   @ViewChild('seconds', { static: true }) seconds: ElementRef | undefined;
 
+  languageConfig: LanguageCofig;
+  private languageConfigSubscription: Subscription | undefined;
+  
+  constructor(private languageService : LanguageService){
+    this.languageConfig = languageService.defaultLanuageConfig;
+  }
+
+  ngOnInit(): void {
+    this.languageConfigSubscription = this.languageService.languageConfig$.subscribe((config) => {
+      this.languageConfig = config;
+    });
+  }
+
+  ngOnDestroy(): void {
+    if(this.languageConfigSubscription){
+      this.languageConfigSubscription?.unsubscribe();
+    }
+  }
+
   ngAfterViewInit() {
     setInterval(() => {
       this.tickTock();
+      console.log(this.targetTime);
       this.difference = this.targetTime - this.now;
       this.difference = this.difference / (1000 * 60 * 60 * 24);
-
-      if(this.days){
-        !isNaN(this.days.nativeElement.innerText)
-        ? (this.days.nativeElement.innerText = Math.floor(this.difference))
-        : (this.days.nativeElement.innerHTML = `<img src="https://i.gifer.com/VAyR.gif" />`);
-      }
     }, 1000);
   }
 
@@ -53,8 +69,15 @@ export class WeddingCounterComponent implements AfterViewInit {
     this.date = new Date();
     this.now = this.date.getTime();
     if(this.days && this.hours && this.minutes && this.seconds && this.difference){
-      this.days.nativeElement.innerText = Math.floor(this.difference);
-      this.hours.nativeElement.innerText = 23 - this.date.getHours();
+
+      if(19 - this.date.getHours()<0){
+        this.days.nativeElement.innerText = Math.floor(this.difference)-1;
+        this.hours.nativeElement.innerText = 24+(19 - this.date.getHours());
+      }else{
+        this.days.nativeElement.innerText = Math.floor(this.difference);
+        this.hours.nativeElement.innerText = 19 - this.date.getHours();
+      }
+
       this.minutes.nativeElement.innerText = 60 - this.date.getMinutes();
       this.seconds.nativeElement.innerText = 60 - this.date.getSeconds();
     
