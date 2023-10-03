@@ -28,6 +28,7 @@ export class LanguageService {
 
   setLanguageCode(newValue: string) {
     this.languageCodeInSubject.next(newValue);
+    sessionStorage.setItem(this.sessionCode,newValue);
 
     if(newValue==='en'){
       this.setLanguageConfig(this.englishConfig);
@@ -41,6 +42,7 @@ export class LanguageService {
   }
 
   refreshLanguageCodeInSession(){
+    console.log("refresh session language");
     const sessionVariable = sessionStorage.getItem(this.sessionCode);
 
     if(sessionVariable){

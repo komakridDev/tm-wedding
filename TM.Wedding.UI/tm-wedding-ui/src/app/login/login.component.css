@@ -18,6 +18,52 @@ html {
     text-align: center;
 }
 
+.inner {
+    position: absolute;
+  }
+  
+  .carousel-container {
+    position: relative;
+  }
+  
+  .overlay-div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0);
+  }
+  
+  .overlay-div-container {
+    width: 100%;
+    margin-top: 25%;
+    text-align: center;
+  }
+  
+  .overlay-div-header {
+    font-family: 'WeddingCaligraphic';
+    font-size: 4rem;
+    color: #d9a74a;
+  }
+  
+  .overlay-div-sub-header {
+    /*border-top:2px solid rgb(255, 255, 255);*/
+    margin-top: 2rem;
+    padding-top: 1rem;
+    color: white;
+    font-family: 'Raleway', sans-serif;
+  }
+  
+  .overlay-div-sub-header-day {
+    font-size: 2.4rem;
+    font-family: 'Major Mono Display', monospace;
+  }
+  
+  .overlay-div-day-header {
+    border: 0.4rem solid white;
+  }
+
 .error-container {
     padding: 20px;
     border: 1px solid #e1b7b7;
@@ -25,10 +71,7 @@ html {
     background-color: #ffe2e7;
 }
 
-.overlay-div-header {
-    font-family: 'WeddingCaligraphic';
-    font-size: 4rem;
-}
+
 
 /* Animations */
 .fade-in {

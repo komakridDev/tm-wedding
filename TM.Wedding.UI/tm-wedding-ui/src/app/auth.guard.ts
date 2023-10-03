@@ -5,6 +5,7 @@ import { catchError, map } from 'rxjs/operators';
 import { of } from 'rxjs';
 import { AuthguardService } from './authguard.service';
 import { SharedService } from './shared.service';
+import { LanguageService } from './language.service';
 
 @Injectable({
     providedIn: 'root'
@@ -14,15 +15,19 @@ export class AuthGuard implements CanActivate {
     private isLoggedInSubject = new BehaviorSubject<boolean>(false);
     isLoggedIn$ = this.isLoggedInSubject.asObservable();
 
-    constructor(private AuthGuardservice: AuthguardService, private router: Router, private sharedService: SharedService) { }
+    constructor(private AuthGuardservice: AuthguardService, 
+        private router: Router, 
+        private sharedService: SharedService,
+        private languageService: LanguageService
+        ) { }
 
     canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean | UrlTree | Observable<boolean | UrlTree> | Promise<boolean | UrlTree> {
-
         return this.AuthGuardservice.getObservableToken().pipe(
             map(e => {
                 if (e) {
                     this.isLoggedInSubject.next(true)
                     this.sharedService.setLoggenInFlag(true);
+                    this.languageService.refreshLanguageCodeInSession();
                     return true;
                 } else {
                     this.isLoggedInSubject.next(false)
