@@ -12,7 +12,7 @@
 }
 
 .parent-container h1 {
-    font-family: 'Poppins', sans-serif;
+    font-family: var(--ff-main);
 }
 
 .card-container {
@@ -29,11 +29,11 @@
 }
 
 .card-container h1 {
-    font-family: 'Raleway', sans-serif;
+    font-family: var(--ff-secondary);
 }
 
 .header-container p {
-    font-family: 'Raleway', sans-serif;
+    font-family: var(--ff-secondary);
     color: rgb(155, 155, 155);
     margin-top: 20px;
     font-size: 1.2rem;
@@ -53,7 +53,7 @@
 }
 
 .flex-child-container span {
-    font-family: 'Raleway', sans-serif;
+    font-family: var(--ff-secondary);
     color: rgb(155, 155, 155);
     font-size: 1.4rem;
 }

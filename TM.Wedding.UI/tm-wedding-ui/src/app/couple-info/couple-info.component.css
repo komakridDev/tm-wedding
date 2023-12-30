@@ -8,7 +8,7 @@ h3{
 }
 
 span{
-    font-family: 'Raleway', sans-serif;
+    font-family: var(--ff-secondary);
     font-size:1.2rem;
     color:#d9a74a;
 }

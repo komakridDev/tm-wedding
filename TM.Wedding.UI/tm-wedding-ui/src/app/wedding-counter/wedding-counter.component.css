@@ -7,7 +7,7 @@
     color: #d9a74a;
     border-radius: 6px;
     padding: 10px;
-    font-family: sans-serif;
+    font-family: var(--ff-secondary);
 
     >p {
         margin: 5px 0 15px 0;

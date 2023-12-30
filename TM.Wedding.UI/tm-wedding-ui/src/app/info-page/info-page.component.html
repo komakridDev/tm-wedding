@@ -20,60 +20,60 @@
 
     <div>
         <i class="bi bi-airplane-engines" style="font-size:2.8rem"></i><br>
-        <h1 style="font-family: 'Raleway', sans-serif;">Athens (ATH) to Heraklion (HER) flights</h1>
+        <h1 style="font-family: 'Raleway', sans-serif;">{{languageConfig.properties.get('info_flight1_header')}}</h1>
         <div class="fade-in travel-container">
             <div class="container" style="text-align: center;">
                 <div class="row" style="color:grey;font-family: 'Raleway', sans-serif;">
                     <div class="col">
                         <i class="bi bi-calendar-day-fill"></i><br>
                         <span>78</span><br>
-                        <span>Weekly Planes</span>
+                        <span>{{languageConfig.properties.get('info_flight_number')}}</span>
                     </div>
                     <div class="col">
                         <i class="bi bi-stopwatch-fill"></i><br>
                         <span>52min</span><br>
-                        <span>Average Duration</span>
+                        <span>{{languageConfig.properties.get('info_flight_duration')}}</span>
                     </div>
                     <div class="col">
                         <i class="bi bi-ticket-perforated-fill"></i><br>
                         <span>€38</span><br>
-                        <span>Cheapest Price</span>
+                        <span>{{languageConfig.properties.get('info_flight_cost')}}</span>
                     </div>
                 </div>
                 <div class="row" style="justify-content: center;">
                     <a class="btn btn-warning"
                         href="https://www.rome2rio.com/map/Athens-Airport-ATH/Heraklion?r2r_campaign=TQ_TP_Transport&source=adwords&gclid=CjwKCAjwseSoBhBXEiwA9iZtxrIrGvpKARAvyC6Pkxds-LXY1llp3WME2PqqaizDOMFe-XuYZs8-2BoCt8MQAvD_BwE#r/Fly/s/0"
-                        target="_blank">See schedules</a>
+                        target="_blank">{{languageConfig.properties.get('info_flight_explore_btn')}}</a>
                 </div>
             </div>
         </div>
     </div>
     <div>
         <i class="bi bi-airplane-engines" style="font-size:2.8rem"></i><br>
-        <h1 style="font-family: 'Raleway', sans-serif;">Thessaloniki (SKG) to Heraklion (HER) flights</h1>
+        <h1 style="font-family: 'Raleway', sans-serif;">{{languageConfig.properties.get('info_flight2_header')}}</h1>
         <div class="fade-in travel-container">
             <div class="container" style="text-align: center;">
                 <div class="row" style="color:grey;font-family: 'Raleway', sans-serif;">
                     <div class="col">
                         <i class="bi bi-calendar-day-fill"></i><br>
                         <span>62</span><br>
-                        <span>Weekly Planes</span>
+                        <span>{{languageConfig.properties.get('info_flight_number')}}</span>
                     </div>
                     <div class="col">
                         <i class="bi bi-stopwatch-fill"></i><br>
                         <span>4hours</span><br>
-                        <span>Average Duration</span>
+                        <span>{{languageConfig.properties.get('info_flight_duration')}}</span>
                     </div>
                     <div class="col">
                         <i class="bi bi-ticket-perforated-fill"></i><br>
                         <span>€105</span><br>
-                        <span>Cheapest Price</span>
+                        <span>{{languageConfig.properties.get('info_flight_cost')}}</span>
                     </div>
                 </div>
                 <div class="row" style="justify-content: center;">
                     <a class="btn btn-warning"
                         href="https://www.rome2rio.com/map/Greece/Crete-Greece?r2r_campaign=TQ_TP_Transport&source=adwords&gclid=CjwKCAjwseSoBhBXEiwA9iZtxrIrGvpKARAvyC6Pkxds-LXY1llp3WME2PqqaizDOMFe-XuYZs8-2BoCt8MQAvD_BwE"
-                        target="_blank">See schedules</a>
+                        target="_blank">{{languageConfig.properties.get('info_flight_explore_btn')}}</a>
                 </div>
             </div>
         </div>
@@ -82,40 +82,39 @@
 </div>
 <div class="parent-container" style="text-align: center;">
     <i class="bi bi-tsunami" style="font-size:2.8rem"></i><br>
-    <h1 style="font-family: 'Raleway', sans-serif;">Piraeus to Heraklion ferrys</h1>
+    <h1 style="font-family: 'Raleway', sans-serif;">{{languageConfig.properties.get('info_ferry_header')}}</h1>
     <div class="fade-in travel-container">
         <div class="container" style="text-align: center;">
             <div class="row" style="color:grey;font-family: 'Raleway', sans-serif;">
                 <div class="col">
                     <i class="bi bi-calendar-day-fill"></i><br>
                     <span>24</span><br>
-                    <span>Weekly Ferrys</span>
+                    <span>{{languageConfig.properties.get('info_ferry_number')}}</span>
                 </div>
                 <div class="col">
                     <i class="bi bi-stopwatch-fill"></i><br>
                     <span>8hours</span><br>
-                    <span>Average Duration</span>
+                    <span>{{languageConfig.properties.get('info_ferry_duration')}}</span>
                 </div>
                 <div class="col">
                     <i class="bi bi-ticket-perforated-fill"></i><br>
                     <span>€40</span><br>
-                    <span>Cheapest Price</span>
+                    <span>{{languageConfig.properties.get('info_ferry_cost')}}</span>
                 </div>
             </div>
             <div class="row" style="justify-content: center;">
-                <a class="btn btn-warning" href="https://www.ferryhopper.com/el/" target="_blank">See schedules</a>
+                <a class="btn btn-warning" href="https://www.ferryhopper.com/el/" target="_blank">{{languageConfig.properties.get('info_ferry_explore_btn')}}</a>
             </div>
         </div>
     </div>
     <p>
-        You can also travel with a ferry from Athens, Thessaloniki or Pireus to Chania,
-        but we recommend Heraklionw as it is closer to the wedding.
+        {{languageConfig.properties.get('info_stay_additional')}}
     </p>
 </div>
 
 <div class="card-container">
     <div class="container header-container" style="text-align: center;">
-        <h1>Where to stay...</h1>
+        <h1>{{languageConfig.properties.get('info_stay_header')}}</h1>
     </div>
     <div class="container" style="width:100%">
         <div class="row animationContainer">
@@ -123,7 +122,7 @@
                 <div class="card">
                     <img src="../../assets/img/bali-nostos-hotel.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <h1 class="card-title">Find the best place to enjoy your stay</h1>
+                        <h1 class="card-title">{{languageConfig.properties.get('info_stay_subheader')}}</h1>
                         <div class="container-hashtags">
                             <a class="card-hashtag" style="background-color: #70ba8e;"
                                 href="https://www.booking.com/searchresults.el.html?ss=%CE%9A%CF%81%CE%AE%CF%84%CE%B7%2C+%CE%95%CE%BB%CE%BB%CE%AC%CE%B4%CE%B1&efdco=1&label=gen173nr-1BCAEoggI46AdIM1gEaFyIAQGYAQi4ARfIAQzYAQHoAQGIAgGoAgO4Ap7A7qgGwAIB0gIkMDNkZDY2MzYtMzJmYS00NWQzLTg0YmMtZGU1NGVjMzVlNDM52AIF4AIB&sid=cd81e473b2ab8ba7c863c556e4d9399e&aid=304142&lang=el&sb=1&src_elem=sb&src=index&dest_id=811&dest_type=region&ac_position=0&ac_click_type=b&ac_langcode=el&ac_suggestion_list_length=3&search_selected=true&search_pageview_id=efda234fc2e003d1&ac_meta=GhBlZmRhMjM0ZmMyZTAwM2QxIAAoATICZWw6BWtyaHRoQABKAFAA&group_adults=2&no_rooms=1&group_children=0&sb_travel_purpose=leisure"
@@ -134,89 +133,20 @@
                                 href="https://www.thinkvilla.gr/"
                                 target="_blank">THINK VILLA</a>
                         </div>
-                        <p class="card-text">Our recommendations, according to the distance from the wedding are:</p>
+                        <p class="card-text">{{languageConfig.properties.get('info_stay_recommendations')}}</p>
                         <ul class="card-text">
-                            <li>Skepasti | 900m <i class="bi bi-car-front-fill"></i></li>
-                            <li>Perama | 7.8km <i class="bi bi-car-front-fill"></i></li>
-                            <li>Melidoni | 5.1km <i class="bi bi-car-front-fill"></i></li>
-                            <li>Roumeli | 3.7km <i class="bi bi-car-front-fill"></i></li>
-                            <li>Chouneri | 23km <i class="bi bi-car-front-fill"></i></li>
-                            <li>Aggeliana | 25km <i class="bi bi-car-front-fill"></i></li>
-                            <li>Rethimno | 24km <i class="bi bi-car-front-fill"></i></li>
+                            <li>{{languageConfig.properties.get('info_stay_place1')}} | 900m <i class="bi bi-car-front-fill"></i></li>
+                            <li>{{languageConfig.properties.get('info_stay_place2')}} | 7.8km <i class="bi bi-car-front-fill"></i></li>
+                            <li>{{languageConfig.properties.get('info_stay_place3')}} | 5.1km <i class="bi bi-car-front-fill"></i></li>
+                            <li>{{languageConfig.properties.get('info_stay_place4')}} | 3.7km <i class="bi bi-car-front-fill"></i></li>
+                            <li>{{languageConfig.properties.get('info_stay_place5')}} | 23km <i class="bi bi-car-front-fill"></i></li>
+                            <li>{{languageConfig.properties.get('info_stay_place6')}} | 25km <i class="bi bi-car-front-fill"></i></li>
+                            <li>{{languageConfig.properties.get('info_stay_place7')}} | 24km <i class="bi bi-car-front-fill"></i></li>
                         </ul>
-                        <a routerLink="/about" class="btn btn-info" style="border-radius: 20px;">DISCOVER MORE</a>
+                        <a routerLink="/about" class="btn btn-info" style="border-radius: 20px;">{{languageConfig.properties.get('info_stay_explore_more')}}</a>
                     </div>
                 </div>
             </div>
-            <!-- <div class="col-md-6 col-sm-12 col-lg-6 fade-in">
-                <div class="card">
-                    <img src="../../assets/img/bali-atali-hotel.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h1 class="card-title">Atali Grand Resort & Aqua Park</h1>
-                        <div class="container-hashtags">
-                            <a class="card-hashtag" style="background-color: #70ba8e;"
-                                href="https://www.google.com/maps/place/Atali+Grand+Resort/@35.4058936,24.7796371,17z/data=!3m1!4b1!4m9!3m8!1s0x149ba9914ce7a561:0x12c09557db6851fb!5m2!4m1!1i2!8m2!3d35.4058893!4d24.782212!16s%2Fg%2F1tk206_6?entry=ttu"
-                                target="_blank">MAP</a>
-                            <a class="card-hashtag" style="background-color: #c98066;"
-                                hreft="https://ataligrandresort.com/en/albums" target="_blank">GALLERY</a>
-                            <a class="card-hashtag" style="background-color:#43b3ba;"
-                                href="https://ataligrandresort.com/en/#category1681" target="_blank">WATERPARK</a>
-                        </div>
-                        <p class="card-text">Atali Grand Resort, a fully renovated 4 star Resort which is located in a
-                            beautiful small seaside village in Crete, named Bali. Let us welcome you for a relaxing
-                            weekend, your family vacation or your professional needs. Whatever your choices, our all
-                            inclusive resort will provides you a bright and a relaxing atmosphere in a location where
-                            you overlook both ocean and mountain view.</p>
-                        <a href="https://ataligrandresort.com/" target="_blank" class="btn btn-info"
-                            style="border-radius: 20px;">DISCOVER MORE</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-sm-12 col-lg-6 fade-in">
-                <div class="card">
-                    <img src="../../assets/img/rethimno-grecotel-hotel.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h1 class="card-title">Grecotel Beach House</h1>
-                        <div class="container-hashtags">
-                            <a class="card-hashtag" style="background-color: #c98066;"
-                                href="https://www.google.com/maps/place/Grecotel+Plaza+Beach+House/@35.3682504,24.5023124,17z/data=!3m1!4b1!4m9!3m8!1s0x149b75139acdd4fb:0xbd4699532575b2f5!5m2!4m1!1i2!8m2!3d35.3682461!4d24.5048873!16s%2Fg%2F1hm4fmjgv?entry=ttu"
-                                target="_blank">MAP</a>
-                            <a class="card-hashtag" style="background-color: #dd7299;"
-                                href="https://plazabeachhouse.grecotel.com/photo-gallery.html"
-                                target="_blank">GALLERY</a>
-                            <a class="card-hashtag" style="background-color:#43b3ba;"
-                                href="https://plazabeachhouse.grecotel.com/summer-activities.h"
-                                target="_blank">ACTIVITIES</a>
-                        </div>
-                        <p class="card-text">On the seafront right on the edge of Rethymno town. Authentic, yet
-                            international. Its little neighborhoods house lofts and apartments are perfect for breaks.
-                            The beach is soft sand, the sea Greek blue and kids splash about on paddleboards.</p>
-                        <a href="https://plazabeachhouse.grecotel.com/en/index.html" target="_blank"
-                            class="btn btn-info" style="border-radius: 20px;">DISCOVER MORE</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-sm-12 col-lg-6 fade-in">
-                <div class="card">
-                    <img src="../../assets/img/rethimno-nautilux-hotel.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h1 class="card-title">Nautilux Rethymno</h1>
-                        <div class="container-hashtags">
-                            <a class="card-hashtag" style="background-color: #70ba8e;"
-                                href="https://www.nautiluxhotel.com/rethymno-luxury-hotel/" target="_blank">GALLERY</a>
-                            <a class="card-hashtag" style="background-color: #c98066;"
-                                href="https://www.google.com/maps/place/Nautilux+by+Mage+Hotels/@35.3675909,24.5043421,17z/data=!3m1!4b1!4m9!3m8!1s0x149b7540ad298653:0xeff431f9ac2960cf!5m2!4m1!1i2!8m2!3d35.3675866!4d24.506917!16s%2Fg%2F11pv9hcgnf?entry=ttu"
-                                target="_blank">MAP</a>
-                        </div>
-                        <p class="card-text">Located on the north coastline of Crete, with direct access to the sandy
-                            beach and close to the picturesque and charming city of Rethymnon, the Nautilux 5 star beach
-                            resort is the ideal getaway for travelers who are seeking a combination of luxury beach
-                            relaxation and city exploration in a stylish, elegant and modern ambience. </p>
-                        <a href="https://www.nautiluxhotel.com/?gad=1&gclid=CjwKCAjwseSoBhBXEiwA9iZtxkkYqRZNYkTF7zRSyU47rteXk3dQAuqxfssLwhde6KV8XJydgMiggBoC5y8QAvD_BwE"
-                            target="_blank" class="btn btn-md btn-info" style="border-radius: 20px;">DISCOVER MORE</a>
-                    </div>
-                </div>
-            </div> -->
         </div>
     </div>
 </div>
@@ -226,7 +156,7 @@
 <div class="card-container">
     <div style="text-align: center;">
         <i class="bi bi-shop" style="font-size:2.8rem"></i><br>
-        <h1>What to try</h1>
+        <h1>{{languageConfig.properties.get('info_food_header')}}</h1>
     </div>
     <div class="scroll-container">
         <div class="scroll-content">

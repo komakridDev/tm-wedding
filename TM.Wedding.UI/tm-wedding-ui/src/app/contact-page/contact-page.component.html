@@ -11,7 +11,7 @@
                     <h1 class="overlay-div-header">Contact Us</h1>
                 </div>
                 <div class="container overlay-div-sub-header">
-                    <h3>Send a message if you have any questions or concerns and we will reach out to you</h3>
+                    <h3>{{languageConfig.properties.get('contact_header')}}</h3>
                 </div>
             </div>
         </div>
@@ -22,37 +22,37 @@
                 <div>
                     <div style="margin-bottom:20px">
                         <input id="submitterName" name="submitterName" formControlName="submitterName"
-                            placeholder="Enter your first name" class="form-control">
+                            placeholder="{{languageConfig.properties.get('contact_firstname')}}" class="form-control">
                     </div>
                     <div style="margin-bottom:20px">
                         <input id="submitterSurname" name="submitterSurname" formControlName="submitterSurname"
-                            placeholder="Enter your last name" class="form-control">
+                            placeholder="{{languageConfig.properties.get('contact_lastname')}}" class="form-control">
                     </div>
                     <div style="margin-bottom:20px">
                         <input id="phone" name="phone" formControlName="phone"
-                            placeholder="Enter your phone number" class="form-control">
+                            placeholder="{{languageConfig.properties.get('contact_phone')}}" class="form-control">
                     </div>
                     <div style="margin-bottom:20px">
                         <input id="email" name="email" formControlName="email"
-                            placeholder="Enter your email address" class="form-control" type="email">
+                            placeholder="{{languageConfig.properties.get('contact_email')}}" class="form-control" type="email">
                     </div>
                     <div style="margin-bottom:20px">
                         <textarea id="comments" name="comments" formControlName="comments"
-                            placeholder="Enter any additional comments" class="form-control" rows="6"></textarea>
+                            placeholder="{{languageConfig.properties.get('contact_comments')}}" class="form-control" rows="6"></textarea>
                     </div>
                 </div>
             </div>
     
             <div class="form-inline" style="padding:20px 0px;text-align: center;">
                 <button class="btn btn-lg btn-success" type="submit" style="margin-right:5px;width:100%;max-width:800px"
-                    [disabled]="isLoading || !rsvpForm.valid"><i class="bi bi-envelope-open-heart" style="padding-right:8px"></i>Submit</button>
+                    [disabled]="isLoading || !rsvpForm.valid"><i class="bi bi-envelope-open-heart" style="padding-right:8px"></i>{{languageConfig.properties.get('contact_submit')}}</button>
             </div>
     
             <div class="form-inline" style="padding:40px 0px;" [hidden]="!isLoading">
                 <div class="spinner-border text-primary" role="status">
                 </div>
                 <div>
-                    <h4 style="padding-left:20px;color:rgb(23, 23, 23)">Submitting...</h4>
+                    <h4 style="padding-left:20px;color:rgb(23, 23, 23)">{{languageConfig.properties.get('contact_submitting')}}</h4>
                 </div>
             </div>
     
@@ -64,5 +64,13 @@
             </div>
     
         </form>
+    </div>
+    <div class="overlay-div">
+        <div class="container overlay-div-sub-header">
+            <div class="container overlay-div-sub-header">
+                <h4>{{languageConfig.properties.get('contact_callus')}}</h4>
+                <h5> <a [href]="'tel: 306976033107'">6976033107</a> or <a [href]="'tel: 306976033107'">6976033107</a></h5>
+            </div>
+        </div>
     </div>
 </div>

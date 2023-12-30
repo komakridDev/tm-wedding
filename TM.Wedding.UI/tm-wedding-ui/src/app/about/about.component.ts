@@ -1,5 +1,7 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { NgxSpinnerService } from 'ngx-spinner';
+import { LanguageCofig, LanguageService } from '../language.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-about',
@@ -10,12 +12,19 @@ export class AboutComponent implements OnInit, AfterViewInit  {
   hideInfoDetails: boolean = true;
   loading = true;
 
-  constructor(private spinner: NgxSpinnerService) {
+  languageConfig: LanguageCofig;
+  private languageConfigSubscription: Subscription | undefined;
 
+  constructor(private spinner: NgxSpinnerService, private languageService: LanguageService) {
+    this.languageConfig = languageService.defaultLanuageConfig;
   }
   ngOnInit(): void {
     this.spinner.show();
     this.setAnimations();
+
+    this.languageConfigSubscription = this.languageService.languageConfig$.subscribe((config) => {
+      this.languageConfig = config;
+    });
   }
 
   ngAfterViewInit(){
@@ -23,6 +32,12 @@ export class AboutComponent implements OnInit, AfterViewInit  {
       this.loading = false;
       this.spinner.hide();
     }, 2000);
+  }
+
+  ngOnDestroy(): void {
+    if(this.languageConfigSubscription){
+      this.languageConfigSubscription?.unsubscribe();
+    }
   }
 
   onShowMoreDetails() {
