@@ -21,6 +21,12 @@
     padding: 4rem;
     width: 100%;
 }
+.card-container-light {
+    background-color: #2e2b2b;
+    color: white;
+    padding: 4rem;
+    width: 100%;
+}
 
 @media screen and (max-width: 600px) {
     .card-container {
@@ -29,6 +35,16 @@
 }
 
 .card-container h1 {
+    font-family: var(--ff-secondary);
+}
+
+@media screen and (max-width: 600px) {
+    .card-container-light {
+        padding: 2rem 0.2rem;
+    }
+}
+
+.card-container-light h1 {
     font-family: var(--ff-secondary);
 }
 

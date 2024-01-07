@@ -5,6 +5,7 @@ import emailjs from '@emailjs/browser';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { LanguageCofig, LanguageService } from '../language.service';
 import { Subscription } from 'rxjs';
+import {Clipboard} from '@angular/cdk/clipboard'
 
 @Component({
   selector: 'app-gift-page',
@@ -19,7 +20,8 @@ export class GiftPageComponent implements OnInit, OnDestroy {
   constructor(
     private router: Router,
     private spinner: NgxSpinnerService,
-    private languageService: LanguageService
+    private languageService: LanguageService,
+    private clipboard: Clipboard
   ) {
     this.languageConfig = languageService.defaultLanuageConfig;
     this.isLoading = false;

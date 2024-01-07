@@ -18,7 +18,16 @@
     <h4>{{languageConfig.properties.get('gift_page_header')}}</h4>
 </div>
 <div class="container iban-info">
-    <i class="bi bi-bank"></i>
-    <h4>IBAN 2323232323232323232</h4>
-    <h4>IBAN 2323232323232323232</h4>
+    <div class="iban-card">
+        <img src="../../assets/img/nbg_bank.jpg" class="iban-img">
+        <h4>GR1901103730000037367551357</h4>
+        <h4>Thodoris</h4>
+        <button class="btn btn-primary" [cdkCopyToClipboard]="'GR1901103730000037367551357'"><i class="bi bi-copy"></i> {{languageConfig.properties.get('gift_page_copy_btn')}}</button>
+    </div>
+    <div class="iban-card">
+        <img src="../../assets/img/piraeus.png" class="iban-img">
+        <h4>GR7401716310006631144237171</h4>
+        <h4>Marilena</h4>
+        <button class="btn btn-primary" [cdkCopyToClipboard]="'GR7401716310006631144237171'"><i class="bi bi-copy"></i> {{languageConfig.properties.get('gift_page_copy_btn')}}</button>
+    </div>
 </div>

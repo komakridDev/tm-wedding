@@ -18,9 +18,9 @@ export class LanguageService {
     properties: new Map<string, string>()
   };
 
-  defaultLanuageConfig: LanguageCofig = this.englishConfig;
+  defaultLanuageConfig: LanguageCofig = this.greekConfig;
   private sessionCode = 'lang-code';
-  private languageCodeInSubject = new BehaviorSubject<string>('en');
+  private languageCodeInSubject = new BehaviorSubject<string>('el');
   private languageConfigInSubject = new BehaviorSubject<LanguageCofig>(this.defaultLanuageConfig);
 
   languageCode$ = this.languageCodeInSubject.asObservable();
@@ -168,6 +168,8 @@ export class LanguageService {
     this.greekConfig.properties.set("info_stay_explore_more", "ΔΕΙΤΕ ΠΕΡΙΣΣΟΤΕΡΑ");
     this.greekConfig.properties.set("info_stay_additional", "Μπορείτε επίσης να ταξιδέψετε ακτοπλοϊκά ή αεροπορικά απο Αθήνα, Πειραιά και Θεσσαλονική προς Χανιά, αλλά προτείνουμε το Ηράκλειο, καθώς ειναι πιο κοντά στην τοποθεσία του γάμου.");
     this.greekConfig.properties.set("info_food_header", "Τι να δοκιμάσετε...");
+    this.greekConfig.properties.set("info_visit_header", "Καφε & Ποτό...");
+    this.greekConfig.properties.set("info_beach_header", "Κοντινές Παραλίες...");
     this.greekConfig.properties.set("info_stay_useful_phones", "Χρήσιμα Τηλέφωνα");
     this.greekConfig.properties.set("info_stay_useful_phones1", "Κέντρο Υγείας Περάματος");
     this.greekConfig.properties.set("info_stay_useful_phones2", "Κέντρο Υγείας Ανωγείων");
@@ -176,6 +178,7 @@ export class LanguageService {
     this.greekConfig.properties.set("info_stay_useful_phones5", "Τροχαία Ρεθύμνου");
     this.greekConfig.properties.set("info_stay_useful_phones6", "Πυροσβεστική Περάματος");
     this.greekConfig.properties.set("info_stay_useful_phones7", "Πυροσβεστική Ρεθύμνου");
+    this.greekConfig.properties.set("info_stay_useful_phones_btn", "Πατήστε παραπάνω για κλήση");
 
     //About Page
     this.greekConfig.properties.set("about_header", "Ο προορισμός που τα έχει όλα!");
@@ -229,6 +232,7 @@ export class LanguageService {
     this.greekConfig.properties.set("about_crete_flv_title","ΓΕΥΣΕΙΣ");
     this.greekConfig.properties.set("about_crete_flv_subTitle","από Κρήτη");
     this.greekConfig.properties.set("about_crete_flv_btn","ΔΕΙΤΕ");
+    this.greekConfig.properties.set('gift_page_copy_btn','Αντιγραφή στο πρόχειρο');
 
     //Gift
     this.greekConfig.properties.set("gift_page_header","Αν και η χαρά να σας έχουμε μαζί μας την ημέρα του γάμου μας ξεπερνά κάθε υλικό δώρο, η υποστήριξή σας θα ήταν θερμά ευπρόσδεκτη και πραγματικά εκτιμημένη.");
@@ -326,6 +330,8 @@ export class LanguageService {
     this.englishConfig.properties.set("info_stay_explore_more", "DISCOVER MORE");
     this.englishConfig.properties.set("info_stay_additional", "You can also travel with a ferry or airplane from Athens, Thessaloniki or Pireus to Chania, but we recommend Heraklion as it is closer to the wedding.");
     this.englishConfig.properties.set("info_food_header", "What to try...");
+    this.englishConfig.properties.set("info_visit_header", "Coffee & Drink...");
+    this.englishConfig.properties.set("info_beach_header", "Nearby beaches...");
     this.englishConfig.properties.set("info_stay_useful_phones", "Useful Phones");
     this.englishConfig.properties.set("info_stay_useful_phones1", "Health Center Peramatos");
     this.englishConfig.properties.set("info_stay_useful_phones2", "Health Center Anogion");
@@ -334,6 +340,7 @@ export class LanguageService {
     this.englishConfig.properties.set("info_stay_useful_phones5", "Traffic Police Rethimno");
     this.englishConfig.properties.set("info_stay_useful_phones6", "Fire Department Perama");
     this.englishConfig.properties.set("info_stay_useful_phones7", "Fire Department Rethimno");
+    this.englishConfig.properties.set("info_stay_useful_phones_btn", "Click on it to call");
 
     //About Page
     this.englishConfig.properties.set("about_header", "Crete simply has it all!");
@@ -483,6 +490,7 @@ export class LanguageService {
 
     //Gift
     this.englishConfig.properties.set("gift_page_header","While the joy of having you with us on our wedding day surpasses any material gift, should you wish to contribute in another way, your support towards our journey forward would be warmly welcomed and truly valued.");
+    this.englishConfig.properties.set('gift_page_copy_btn','Copy to cliboard');
   }
 }
 

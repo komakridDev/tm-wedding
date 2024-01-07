@@ -9,6 +9,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatIconModule} from '@angular/material/icon';
 import {MatInputModule} from '@angular/material/input';
+import { ClipboardModule } from '@angular/cdk/clipboard'
 
 import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
@@ -57,7 +58,8 @@ import { NgxSpinnerModule } from 'ngx-spinner';
     ReactiveFormsModule,
     FormsModule,
     BrowserAnimationsModule,
-    NgxSpinnerModule.forRoot({type: 'square-jelly-box'})
+    NgxSpinnerModule.forRoot({type: 'square-jelly-box'}),
+    ClipboardModule
   ],
   exports: [
     NgxSpinnerModule

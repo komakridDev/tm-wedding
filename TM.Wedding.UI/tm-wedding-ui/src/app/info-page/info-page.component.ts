@@ -13,7 +13,7 @@ export class InfoPageComponent implements OnInit, AfterViewInit {
   protected loading = true;
   protected languageConfig: LanguageCofig;
   private languageConfigSubscription: Subscription | undefined;
-
+  
   constructor(
     private spinner: NgxSpinnerService,
     private languageService: LanguageService
