@@ -10,7 +10,7 @@ h3{
 span{
     font-family: var(--ff-secondary);
     font-size:1.2rem;
-    color:#d9a74a;
+    color:var(--white-color)
 }
 
 .couple-card{

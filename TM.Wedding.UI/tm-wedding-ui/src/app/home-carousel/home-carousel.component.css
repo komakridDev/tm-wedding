@@ -24,7 +24,7 @@
 .overlay-div-header {
   font-family: 'WeddingCaligraphic';
   font-size: 4rem;
-  color: #d9a74a;
+  color: var(--white-color);
 }
 
 .overlay-div-sub-header {

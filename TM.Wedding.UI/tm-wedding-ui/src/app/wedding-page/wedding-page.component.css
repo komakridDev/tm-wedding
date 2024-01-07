@@ -1,0 +1,178 @@
+.parent-container {
+    background-color: #2e2b2b;
+    color: white;
+    padding: 4rem;
+    width: 100%;
+}
+
+@media screen and (max-width: 600px) {
+    .parent-container {
+        padding: 2rem 0.2rem;
+    }
+}
+
+.parent-container h1 {
+    font-family: var(--ff-main);
+}
+
+.card-container {
+    background-color: #1b1a1a;
+    color: white;
+    padding: 4rem;
+    width: 100%;
+}
+
+@media screen and (max-width: 600px) {
+    .card-container {
+        padding: 2rem 0.2rem;
+    }
+}
+
+.card-container h1 {
+    font-family: var(--ff-secondary);
+}
+
+.header-container p {
+    font-family: var(--ff-secondary);
+    color: rgb(155, 155, 155);
+    margin-top: 20px;
+    font-size: 1.2rem;
+}
+
+.flex-div-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.flex-child-container {
+    flex: 1;
+    justify-content: center;
+    margin-left: 2rem;
+}
+
+.flex-child-container span {
+    font-family: var(--ff-secondary);
+    color: rgb(155, 155, 155);
+    font-size: 1.4rem;
+}
+
+.card{
+    background-color: #1b1a1a;
+    color:white;
+    border:0px;
+    padding:1rem;
+}
+
+.card-text{
+    color: rgb(155, 155, 155);
+}
+
+.container-hashtags{
+    margin-bottom:12px;
+}
+
+.card-hashtag{
+    padding:4px;
+    border:1px solid transparent;
+    border-radius: 10px;
+    margin-right:4px;
+    text-decoration: none;
+    color:white;
+    font-size: 0.8rem;
+}
+
+.card-hashtag:hover{
+    font-weight: bold;
+}
+
+.header-center-container{
+    width:100%;
+    text-align: center;
+    padding:2rem;
+    margin-bottom:1rem;
+}
+
+.details-container{
+    color: rgb(155, 155, 155);
+    padding-left:1rem;
+    padding-right:1rem;
+}
+
+.reason-header{
+    font-weight: bold;
+    font-size:1.2rem;
+}
+
+@media screen and (max-width: 600px) {
+    .align-center-sm-mg-top {
+        text-align: center;
+        margin-top:20px;
+        padding-left:0px;
+    }
+}
+
+.bg {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url("../../assets/img/crete-day.jpg");
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.fadeInTop{
+    -webkit-animation: fadeInTop 1.2s both;
+    -moz-animation: fadeInTop 1.2s both;
+    -o-animation: fadeInTop 1.2s both;
+    animation: fadeInTop 1.2s both;
+}
+
+@-webkit-keyframes fadeInTop{
+    0%{
+        opacity:0;
+        -webkit-transform: translateY(-50px);
+    }
+    100%{
+        opacity:1;
+        -webkit-transform: translateY(0px);
+    }
+}
+
+/* Animations */
+.fade-in {
+    opacity: 0;
+    transition: opacity 1s ease-in;
+  }
+  
+  .fade-in.appear {
+    opacity: 1;
+  }
+
+  .from-left {
+    grid-column: 2 / 3;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+  }
+  
+  .from-right {
+    grid-column: 3 / 4;
+    -webkit-transform: translateX(50%);
+    transform: translateX(50%);
+  }
+  
+  .from-left,
+  .from-right {
+    transition: opacity 400ms ease-in, -webkit-transform 800ms ease-in;
+    transition: opacity 400ms ease-in, transform 800ms ease-in;
+    transition: opacity 400ms ease-in, transform 800ms ease-in,
+      -webkit-transform 800ms ease-in;
+    opacity: 0;
+  }
+  
+  .from-left.appear,
+  .from-right.appear {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+  }

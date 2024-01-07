@@ -6,15 +6,14 @@ import { NgxSpinnerService } from 'ngx-spinner';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
 })
-export class LoginComponent implements OnInit, OnDestroy  {
-
-  loginForm: FormGroup;
-  username: FormControl;
-  password: FormControl;
-  errorMessage: string;
-  isLoading: boolean;
+export class LoginComponent implements OnInit, OnDestroy {
+  protected loginForm: FormGroup;
+  protected username: FormControl;
+  protected password: FormControl;
+  protected errorMessage: string;
+  protected isLoading: boolean;
 
   constructor(private router: Router, private spinner: NgxSpinnerService) {
     this.errorMessage = '';
@@ -24,9 +23,8 @@ export class LoginComponent implements OnInit, OnDestroy  {
 
     this.loginForm = new FormGroup({
       username: this.username,
-      password: this.password
+      password: this.password,
     });
-
   }
   ngOnInit(): void {
     this.setAnimations();
@@ -40,53 +38,51 @@ export class LoginComponent implements OnInit, OnDestroy  {
     this.spinner.show();
     var psw = this.loginForm.controls['password'].value;
 
-   if(psw === 'tm2024'){
+    if (psw === 'tm2024') {
+      sessionStorage.setItem('AuthStatus', 'LoggedIn');
+      sessionStorage.setItem('SessionToken', psw);
 
-    sessionStorage.setItem('AuthStatus', 'LoggedIn')
-    sessionStorage.setItem('SessionToken', psw)
-
-    setTimeout(() => {
-      this.loginForm.reset();
-      window.location.href = '';
+      setTimeout(() => {
+        this.loginForm.reset();
+        window.location.href = '';
+        this.spinner.hide();
+      }, 2000);
+    } else {
+      this.isLoading = false;
       this.spinner.hide();
-    }, 2000);
-   }else{
-    this.isLoading = false;
-    this.spinner.hide();
-    this.errorMessage = "Password is wrong please try again"
-   }
-
+      this.errorMessage = 'Password is wrong please try again';
+    }
   }
 
-  setAnimations(){
-    const faders = document.querySelectorAll(".fade-in");
-    const sliders = document.querySelectorAll(".slide-in");
+  setAnimations() {
+    const faders = document.querySelectorAll('.fade-in');
+    const sliders = document.querySelectorAll('.slide-in');
 
     const appearOptions = {
       threshold: 0,
-      rootMargin: "0px 0px -250px 0px"
+      rootMargin: '0px 0px -250px 0px',
     };
 
     const appearOnScroll = new IntersectionObserver(function (
       entries,
       appearOnScroll
     ) {
-      entries.forEach(entry => {
+      entries.forEach((entry) => {
         if (!entry.isIntersecting) {
-          entry.target.classList.remove("appear");
+          entry.target.classList.remove('appear');
           return;
         } else {
-          entry.target.classList.add("appear");
+          entry.target.classList.add('appear');
         }
       });
     },
-      appearOptions);
+    appearOptions);
 
-    faders.forEach(fader => {
+    faders.forEach((fader) => {
       appearOnScroll.observe(fader);
     });
 
-    sliders.forEach(slider => {
+    sliders.forEach((slider) => {
       appearOnScroll.observe(slider);
     });
   }

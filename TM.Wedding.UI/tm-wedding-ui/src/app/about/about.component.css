@@ -1,5 +1,5 @@
 .parent-container {
-    background-color: #2e2b2b;
+    background-color: var(---dark-color);
     color: white;
     padding: 4rem;
     width: 100%;

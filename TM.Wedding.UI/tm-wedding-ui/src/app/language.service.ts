@@ -39,6 +39,8 @@ export class LanguageService {
         :root {
         --ff-main: 'Poppins', sans-serif;
         --ff-secondary: 'Raleway', sans-serif;
+        --white-color: #dec89d;
+        --dark-color: black;
         }
         `; 
       }
@@ -52,6 +54,8 @@ export class LanguageService {
         :root {
         --ff-main: 'Manrope', sans-serif;
         --ff-secondary: 'Manrope', sans-serif;
+        --white-color: #dec89d;
+        --dark-color: black;
         }
         `; 
       }
@@ -88,23 +92,23 @@ export class LanguageService {
     this.greekConfig.properties.set("home_ctr_mins", "Λεπτά");
     this.greekConfig.properties.set("home_ctr_sec", "Δεύτερα");
     //CoupleInfo
-    this.greekConfig.properties.set("home_cpl_header", "ΣΑΣ ΚΑΛΟΥΜΕ ΝΑ ΖΗΣΕΤΕ ΜΑΖΙ ΜΑΣ ΤΗΝ ΠΙΟ ΕΥΤΙΧΙΣΜΕΝΗ ΜΕΡΑ ΤΗΣ ΖΩΗΣ ΜΑΣ");
+    this.greekConfig.properties.set("home_cpl_header", "ΣΑΣ ΚΑΛΟΥΜΕ ΝΑ ΖΗΣΕΤΕ ΜΑΖΙ ΜΑΣ ΤΗΝ ΠΙΟ ΕΥΤYΧΙΣΜΕΝΗ ΜΕΡΑ ΤΗΣ ΖΩΗΣ ΜΑΣ");
     this.greekConfig.properties.set("home_cpl_subheader", "Λίγα λόγια για μας");
     this.greekConfig.properties.set("home_cpl_groom", "Είσαι ο καλύτερος μου φίλος, μέντορας, συμπαίκτης, έμπνευση και η μεγαλύτερη μου πρόκληση. Αλλά το σημαντικότερο είσαι η αγαπή της ζωής μου και με κάνεις πιο ευτιχισμένη από τι θα μπορούσα να φανταστώ ότι είναι δυνατό.");
     this.greekConfig.properties.set("home_cpl_pride", "Αγαπώ την ομορφιά σου, την εφυιά σου, την ευγενική ψυχή σου και τον τρόπο που ξέρεις πάντα να με κάνεις να νίωθω μοναδικός. Πέρα απο τους όρκους αιώνιας αγαπής που θα δώσω την ημέρα του γάμους, ορκίζομαι ότι θα είμαι η πιο ευτιχισμένη απο όλο τον κόσμο.");
     //HomeDetailsInfo
     this.greekConfig.properties.set("home_info_header_cer", "ΤΕΛΕΤΗ");
     this.greekConfig.properties.set("home_info_subheader_cer", "Σκεπαστή Αρένα");
-    this.greekConfig.properties.set("home_info_loc1_cer", "Πανόρμος | Κρήτη");
-    this.greekConfig.properties.set("home_info_loc2_cer", "ΕΟ Ρεθύμνου Ηρακλέιου, Σκεπαστή");
+    this.greekConfig.properties.set("home_info_loc1_cer", "Σκεπαστή | Κρήτη");
+    this.greekConfig.properties.set("home_info_loc2_cer", "ΕΟ Ρεθύμνου Ηρακλείου, Σκεπαστή");
     this.greekConfig.properties.set("home_info_header_par", "ΔΕΞΙΩΣΗ");
     this.greekConfig.properties.set("home_info_subheader_par", "Σκεπαστή Αρένα");
-    this.greekConfig.properties.set("home_info_loc1_par", "Πανόρμος | Κρήτη");
-    this.greekConfig.properties.set("home_info_loc2_par", "ΕΟ Ρεθύμνου Ηρακλέιου, Σκεπαστή");
+    this.greekConfig.properties.set("home_info_loc1_par", "Σκεπαστή | Κρήτη");
+    this.greekConfig.properties.set("home_info_loc2_par", "ΕΟ Ρεθύμνου Ηρακλείου, Σκεπαστή");
     this.greekConfig.properties.set("home_info_btn_map", "Δείτε στο Χάρτη");
 
     //RSVP
-    this.greekConfig.properties.set("rsvp_invite_header", "Θα σας παρακαλούσαμε να μας απαντήσετε ως τις 10 Ιουλίου για το αν θα παρευρεθείτε!");
+    this.greekConfig.properties.set("rsvp_invite_header", "Θα σας παρακαλούσαμε να μας απαντήσετε ως τις 1 Ιουλίου για το αν θα παρευρεθείτε!");
     this.greekConfig.properties.set("rsvp_pos_answer", "Θα παρευρεθώ");
     this.greekConfig.properties.set("rsvp_neg_answer", "Δεν θα μπορέσω");
     this.greekConfig.properties.set("rsvp_main_option_a", "στο γάμο/γλέντι");
@@ -133,6 +137,8 @@ export class LanguageService {
     this.greekConfig.properties.set("contact_submit", "Υποβολή");
     this.greekConfig.properties.set("contact_submitting", "Παρακαλώ περιμένετε...");
     this.greekConfig.properties.set("contact_callus", "H΄ επικοινωνήστε μαζί μας στο:");
+    this.greekConfig.properties.set("contact_callus1", "Θοδωρής");
+    this.greekConfig.properties.set("contact_callus2", "Μαριλένα");
 
     //Info Page
     this.greekConfig.properties.set("info_flight1_header", "Αθήνα (ATH) Ηράκλειο (HER) πτήσεις");
@@ -146,29 +152,40 @@ export class LanguageService {
     this.greekConfig.properties.set("info_ferry_duration", "Διάρκεια Μ.Ο.");
     this.greekConfig.properties.set("info_ferry_cost", "Φθηνότερη Τιμή");
     this.greekConfig.properties.set("info_ferry_explore_btn", "Δείτε δρομολόγια");
-    this.greekConfig.properties.set("info_stay_header", "Που να μέινετε...");
+    this.greekConfig.properties.set("info_stay_header", "Που να μείνετε...");
     this.greekConfig.properties.set("info_stay_subheader", "Βρείτε το κατάλληλο μέρος για να απολάυσετε τη διαμονή σας");
     this.greekConfig.properties.set("info_stay_recommendations", "Οι προτάσεις μας με βάση την απόσταση απο την τοποθεσία του γάμου:");
     this.greekConfig.properties.set("info_stay_place1", "Σκεπαστή");
     this.greekConfig.properties.set("info_stay_place2", "Πέραμα");
-    this.greekConfig.properties.set("info_stay_place3", "Μελιδόνη");
+    this.greekConfig.properties.set("info_stay_place3", "Μελιδόνι");
     this.greekConfig.properties.set("info_stay_place4", "Ρούμελη");
-    this.greekConfig.properties.set("info_stay_place5", "Χουνέρη");
-    this.greekConfig.properties.set("info_stay_place6", "Αγγελιάνα");
-    this.greekConfig.properties.set("info_stay_place7", "Ρέθυμνο");
+    this.greekConfig.properties.set("info_stay_place5", "Χουμέρι");
+    this.greekConfig.properties.set("info_stay_place6", "Αγγελιανά");
+    this.greekConfig.properties.set("info_stay_place7", "Σκαλέτα");
+    this.greekConfig.properties.set("info_stay_place8", "Ρέθυμνο");
+    this.greekConfig.properties.set("info_stay_place9", "Πάνορμο");
+    this.greekConfig.properties.set("info_stay_place10", "Μπαλί");
     this.greekConfig.properties.set("info_stay_explore_more", "ΔΕΙΤΕ ΠΕΡΙΣΣΟΤΕΡΑ");
-    this.greekConfig.properties.set("info_stay_additional", "Μπορείτε επίσης να ταξιδέψετε ακτοπλοϊκά απο Αθήνα, Πειραιά και Θεσσαλονική προς Χανιά, αλλά προτείνουμε το Ηράκλειο, καθώς ειναι πιο κοντά στην τοποθεσία του γάμου.");
+    this.greekConfig.properties.set("info_stay_additional", "Μπορείτε επίσης να ταξιδέψετε ακτοπλοϊκά ή αεροπορικά απο Αθήνα, Πειραιά και Θεσσαλονική προς Χανιά, αλλά προτείνουμε το Ηράκλειο, καθώς ειναι πιο κοντά στην τοποθεσία του γάμου.");
     this.greekConfig.properties.set("info_food_header", "Τι να δοκιμάσετε...");
+    this.greekConfig.properties.set("info_stay_useful_phones", "Χρήσιμα Τηλέφωνα");
+    this.greekConfig.properties.set("info_stay_useful_phones1", "Κέντρο Υγείας Περάματος");
+    this.greekConfig.properties.set("info_stay_useful_phones2", "Κέντρο Υγείας Ανωγείων");
+    this.greekConfig.properties.set("info_stay_useful_phones3", "Γενικό Νοσοκομείο Ρεθύμνου");
+    this.greekConfig.properties.set("info_stay_useful_phones4", "Α.Τ. Περάματος");
+    this.greekConfig.properties.set("info_stay_useful_phones5", "Τροχαία Ρεθύμνου");
+    this.greekConfig.properties.set("info_stay_useful_phones6", "Πυροσβεστική Περάματος");
+    this.greekConfig.properties.set("info_stay_useful_phones7", "Πυροσβεστική Ρεθύμνου");
 
     //About Page
     this.greekConfig.properties.set("about_header", "Ο προορισμός που τα έχει όλα!");
-    this.greekConfig.properties.set("about_subheader", "Σας προτείνουμε να συνδυάσετε τον γάμο μας, με τις καλοκαιρινές σας διακοπές");
+    this.greekConfig.properties.set("about_subheader", "Σας προτείνουμε να συνδυάσετε τον γάμο μας, με τις καλοκαιρινές σας διακοπές.");
     this.greekConfig.properties.set("about_top_paragraph", `Η Κρήτη, το μεγαλύτερο νησί της Ελλάδας, είναι ένας τόπος γοητευτικός, που προσφέρει στον υπέρτατο βαθμό όσα μπορείτε να ονειρευτείτε. Λόγω της στρατηγικής της θέσης, υπήρξε σταυροδρόμι λαών και πολιτισμών, στόχος κατακτητών και κομβικό πέρασμα για Μινωίτες, Μυκηναίους, Οθωμανούς. Άραβες και Ενετούς, που άφησαν πλούσια πολιτιστική παρακαταθήκη στο νησί.
     Παραλίες με κρυστάλλινα διαυγή νερά, βουνά κακοτράχαλα αλλά μεγαλοπρεπή, σπουδαία μουσεία και αρχαίοι οικισμοί, τοιχογραφίες με έντονα χρώματα, εντυπωσιακά σπήλαια και βάραθρα, γνωστά από τους προϊστορικούς χρόνους, ήπιο κλίμα, μαγευτικές ακτές με υπερσύγχρονα ξενοδοχεία, γοητευτική ενδοχώρα με γραφικά χωριά, παραδόσεις και ζεστή φιλοξενία, εξαιρετική τοπική κουζίνα (με πρωταγωνιστικό ρόλο να έχουν το κρέας, το παρθένο ελαιόλαδο, τα φρούτα, τα λαχανικά και τα όσπρια).
     Ένα νησί ξεχωριστό με πάνω από 1.000 χλμ. ακτών: αυτή είναι η Κρήτη.`);
     this.greekConfig.properties.set("about_card1", "ΜΙΝΩΙΚΟΣ ΠΟΛΙΤΙΣΜΟΣ");
     this.greekConfig.properties.set("about_card2", "ΦΑΡΑΓΓΙΑ");
-    this.greekConfig.properties.set("about_card3", "ΜΟΝΟΑΤΙΑ");
+    this.greekConfig.properties.set("about_card3", "ΜΟΝΟΠΑΤΙΑ");
     this.greekConfig.properties.set("about_places_header", "Τι να επισκεφτείτε...");
     this.greekConfig.properties.set("about_places_card1_title", "Χανιά");
     this.greekConfig.properties.set("about_places_card1_body", `Η πόλη των Χανίων είναι η έδρα του ομώνυμου νομού, μια πόλη όπου η όσμωση διαφορετικών πολιτισμών ανά τους αιώνες άφησε το χαρακτηριστικό της σημάδι. Η περιπλάνηση στους λαβυρινθώδεις δρόμους της Παλιάς Πόλης με τις επιβλητικές βενετσιάνικες οικίες, τις κρήνες και τους περικαλλείς ναούς αποτελεί...`);
@@ -213,6 +230,10 @@ export class LanguageService {
     this.greekConfig.properties.set("about_crete_flv_subTitle","από Κρήτη");
     this.greekConfig.properties.set("about_crete_flv_btn","ΔΕΙΤΕ");
 
+    //Gift
+    this.greekConfig.properties.set("gift_page_header","Αν και η χαρά να σας έχουμε μαζί μας την ημέρα του γάμου μας ξεπερνά κάθε υλικό δώρο, η υποστήριξή σας θα ήταν θερμά ευπρόσδεκτη και πραγματικά εκτιμημένη.");
+    //αν θέλετε να συνεισφέρετε με άλλο τρόπο
+
     //Header
     this.englishConfig.properties = new Map<string, string>();
     this.englishConfig.properties.set("header_home", "Home");
@@ -236,16 +257,16 @@ export class LanguageService {
     //HomeDetailsInfo
     this.englishConfig.properties.set("home_info_header_cer", "CEREMONY");
     this.englishConfig.properties.set("home_info_subheader_cer", "Skepasti Arena");
-    this.englishConfig.properties.set("home_info_loc1_cer", "Panormos | Crete");
+    this.englishConfig.properties.set("home_info_loc1_cer", "Skepasti | Crete");
     this.englishConfig.properties.set("home_info_loc2_cer", "ΕΟ Rethimnou Irakliou, Skepasti");
     this.englishConfig.properties.set("home_info_header_par", "PARTY");
     this.englishConfig.properties.set("home_info_subheader_par", "Skepasti Arena");
-    this.englishConfig.properties.set("home_info_loc1_par", "Panormos | Crete");
+    this.englishConfig.properties.set("home_info_loc1_par", "Skepasti | Crete");
     this.englishConfig.properties.set("home_info_loc2_par", "ΕΟ Rethimnou Irakliou, Skepasti");
     this.englishConfig.properties.set("home_info_btn_map", "Click to see the Map");
 
     //RSVP
-    this.englishConfig.properties.set("rsvp_invite_header", "Please let us know if you can make it by July 10th at the latest, preesh!");
+    this.englishConfig.properties.set("rsvp_invite_header", "Please let us know if you can make it by July 1st at the latest, preesh!");
     this.englishConfig.properties.set("rsvp_pos_answer", "I will");
     this.englishConfig.properties.set("rsvp_neg_answer", "I will not");
     this.englishConfig.properties.set("rsvp_main_option_a", "attend ceremony and/or party");
@@ -274,6 +295,8 @@ export class LanguageService {
     this.englishConfig.properties.set("contact_submit", "Submit");
     this.englishConfig.properties.set("contact_submitting", "Submitting");
     this.englishConfig.properties.set("contact_callus", "Or give us a call on:");
+    this.englishConfig.properties.set("contact_callus1", "Thodoris");
+    this.englishConfig.properties.set("contact_callus2", "Marilena");
 
     //Info Page
     this.englishConfig.properties.set("info_flight1_header", "Athens (ATH) to Heraklion (HER) flights");
@@ -294,12 +317,23 @@ export class LanguageService {
     this.englishConfig.properties.set("info_stay_place2", "Perama");
     this.englishConfig.properties.set("info_stay_place3", "Melidoni");
     this.englishConfig.properties.set("info_stay_place4", "Roumeli");
-    this.englishConfig.properties.set("info_stay_place5", "Chouneri");
+    this.englishConfig.properties.set("info_stay_place5", "Choumeri");
     this.englishConfig.properties.set("info_stay_place6", "Aggeliana");
-    this.englishConfig.properties.set("info_stay_place7", "Rethimno");
+    this.englishConfig.properties.set("info_stay_place7", "Skaleta");
+    this.englishConfig.properties.set("info_stay_place8", "Rethimno");
+    this.englishConfig.properties.set("info_stay_place9", "Panormo");
+    this.englishConfig.properties.set("info_stay_place10", "Bali");
     this.englishConfig.properties.set("info_stay_explore_more", "DISCOVER MORE");
-    this.englishConfig.properties.set("info_stay_additional", "You can also travel with a ferry from Athens, Thessaloniki or Pireus to Chania, but we recommend Heraklion as it is closer to the wedding.");
+    this.englishConfig.properties.set("info_stay_additional", "You can also travel with a ferry or airplane from Athens, Thessaloniki or Pireus to Chania, but we recommend Heraklion as it is closer to the wedding.");
     this.englishConfig.properties.set("info_food_header", "What to try...");
+    this.englishConfig.properties.set("info_stay_useful_phones", "Useful Phones");
+    this.englishConfig.properties.set("info_stay_useful_phones1", "Health Center Peramatos");
+    this.englishConfig.properties.set("info_stay_useful_phones2", "Health Center Anogion");
+    this.englishConfig.properties.set("info_stay_useful_phones3", "Hospital Rethimno");
+    this.englishConfig.properties.set("info_stay_useful_phones4", "Police Departnent Perama");
+    this.englishConfig.properties.set("info_stay_useful_phones5", "Traffic Police Rethimno");
+    this.englishConfig.properties.set("info_stay_useful_phones6", "Fire Department Perama");
+    this.englishConfig.properties.set("info_stay_useful_phones7", "Fire Department Rethimno");
 
     //About Page
     this.englishConfig.properties.set("about_header", "Crete simply has it all!");
@@ -446,6 +480,9 @@ export class LanguageService {
     this.englishConfig.properties.set("about_crete_flv_title","Flavours");
     this.englishConfig.properties.set("about_crete_flv_subTitle","from Crete");
     this.englishConfig.properties.set("about_crete_flv_btn","DISCOVER THEM");
+
+    //Gift
+    this.englishConfig.properties.set("gift_page_header","While the joy of having you with us on our wedding day surpasses any material gift, should you wish to contribute in another way, your support towards our journey forward would be warmly welcomed and truly valued.");
   }
 }
 

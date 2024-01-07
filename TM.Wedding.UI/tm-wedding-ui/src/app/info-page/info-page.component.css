@@ -17,14 +17,14 @@
 
 .overlay-div-container {
     width: 100%;
-    margin-top: 25%;
+    margin-top: 50%;
     text-align: center;
 }
 
 .overlay-div-header {
     font-family: 'WeddingCaligraphic';
     font-size: 4rem;
-    color: #d9a74a;
+    color: #c5963c;
 }
 
 .overlay-div-sub-header {
@@ -210,7 +210,7 @@
     margin-right: 4px;
     text-decoration: none;
     color: white;
-    font-size: 0.8rem;
+    font-size: 1rem;
 }
 
 .card-hashtag:hover {

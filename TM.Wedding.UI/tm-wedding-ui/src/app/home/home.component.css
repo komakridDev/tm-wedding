@@ -1,5 +1,5 @@
 .container-coupleInfo{
-    background-color: #383838;
+    background-color: var(--dark-color);
     text-align:center;
     padding-top:40px;
     padding-bottom:40px;
@@ -8,6 +8,6 @@
 
 .container-details{
     text-align:center;
-    padding-top:40px;
+    padding-top:0px;
     padding-bottom:40px;
 }

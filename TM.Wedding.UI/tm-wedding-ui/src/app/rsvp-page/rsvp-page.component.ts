@@ -9,34 +9,38 @@ import { Subscription } from 'rxjs';
 @Component({
   selector: 'app-rsvp-page',
   templateUrl: './rsvp-page.component.html',
-  styleUrls: ['./rsvp-page.component.css']
+  styleUrls: ['./rsvp-page.component.css'],
 })
 export class RsvpPageComponent implements OnInit, OnDestroy {
-  rsvpForm: FormGroup;
-  attendCeremony: FormControl;
-  attendParty: FormControl;
-  submitterName: FormControl;
-  submitterSurname: FormControl;
-  submitterFullName: FormControl
-  email: FormControl;
-  phone: FormControl;
-  peopleCount: FormControl<number | null>;
-  subscribeFlag: FormControl;
-  comments: FormControl;
-  generalAttend: FormControl;
-  errorMessage: string;
-  isLoading: boolean = false;
-  submitterWillAttend: boolean = false;
-  attendees: string[] = [];
-  private _atteendees: string[] = [];
-  generalAttendanceFlag: string | undefined;
-  noAttendance: boolean = true;
-  noAnswer: boolean = true;
+  protected rsvpForm: FormGroup;
+  protected attendCeremony: FormControl;
+  protected attendParty: FormControl;
+  protected submitterName: FormControl;
+  protected submitterSurname: FormControl;
+  protected submitterFullName: FormControl;
+  protected email: FormControl;
+  protected phone: FormControl;
+  protected peopleCount: FormControl<number | null>;
+  protected subscribeFlag: FormControl;
+  protected comments: FormControl;
+  protected generalAttend: FormControl;
+  protected errorMessage: string;
+  protected isLoading: boolean = false;
+  protected submitterWillAttend: boolean = false;
+  protected attendees: string[] = [];
+  protected generalAttendanceFlag: string | undefined;
+  protected noAttendance: boolean = true;
+  protected noAnswer: boolean = true;
+  protected languageConfig: LanguageCofig;
 
-  languageConfig: LanguageCofig;
+  private _atteendees: string[] = [];
   private languageConfigSubscription: Subscription | undefined;
 
-  constructor(private router: Router, private spinner: NgxSpinnerService, private languageService: LanguageService) {
+  constructor(
+    private router: Router,
+    private spinner: NgxSpinnerService,
+    private languageService: LanguageService
+  ) {
     this.languageConfig = languageService.defaultLanuageConfig;
 
     this.errorMessage = '';
@@ -64,7 +68,7 @@ export class RsvpPageComponent implements OnInit, OnDestroy {
       subscribeFlag: this.subscribeFlag,
       comments: this.comments,
       submitterFullName: this.submitterFullName,
-      generalAttend: this.generalAttend
+      generalAttend: this.generalAttend,
     });
 
     this.rsvpForm.get('attendCeremony')?.disable();
@@ -80,13 +84,14 @@ export class RsvpPageComponent implements OnInit, OnDestroy {
       this.isLoading = false;
     }, 2000);
 
-    this.languageConfigSubscription = this.languageService.languageConfig$.subscribe((config) => {
-      this.languageConfig = config;
-    });
+    this.languageConfigSubscription =
+      this.languageService.languageConfig$.subscribe((config) => {
+        this.languageConfig = config;
+      });
   }
   ngOnDestroy(): void {
     this.isLoading = false;
-    if(this.languageConfigSubscription){
+    if (this.languageConfigSubscription) {
       this.languageConfigSubscription?.unsubscribe();
     }
   }
@@ -99,21 +104,23 @@ export class RsvpPageComponent implements OnInit, OnDestroy {
       setTimeout(() => {
         this.sendRsvpResponse();
         this.rsvpForm.reset();
-        this.router.navigateByUrl("/thankyou");
+        this.router.navigateByUrl('/thankyou');
         this.spinner.hide();
       }, 4000);
-
-    }
-    catch (err) {
+    } catch (err) {
       this.isLoading = false;
       this.spinner.hide();
-      this.errorMessage = "There was an error during submission please try again!"
+      this.errorMessage =
+        'There was an error during submission please try again!';
     }
-
   }
 
   onSubmitterChange() {
-    this.submitterFullName.setValue(this.rsvpForm.controls['submitterName'].value + ' ' + this.rsvpForm.controls['submitterSurname'].value);
+    this.submitterFullName.setValue(
+      this.rsvpForm.controls['submitterName'].value +
+        ' ' +
+        this.rsvpForm.controls['submitterSurname'].value
+    );
   }
 
   onCheckboxChange() {
@@ -126,7 +133,8 @@ export class RsvpPageComponent implements OnInit, OnDestroy {
   onRadioChange() {
     this.noAnswer = !this.rsvpForm.controls['generalAttend'].value;
     this.generalAttendanceFlag = this.rsvpForm.controls['generalAttend'].value;
-    this.noAttendance = !this.generalAttendanceFlag || this.generalAttendanceFlag === 'No';
+    this.noAttendance =
+      !this.generalAttendanceFlag || this.generalAttendanceFlag === 'No';
 
     if (this.noAttendance) {
       this.rsvpForm.get('attendCeremony')?.disable();
@@ -139,12 +147,12 @@ export class RsvpPageComponent implements OnInit, OnDestroy {
 
   onPeopleCountChange() {
     var numberOfPeople = this.rsvpForm.controls['peopleCount'].value as number;
-    this.attendees = []
+    this.attendees = [];
     if (numberOfPeople - 1 > 0) {
       var arr_names: string[] = new Array(numberOfPeople - 1);
       var arr_names_temp: string[] = new Array(numberOfPeople - 1);
       for (let indx = 0; indx < numberOfPeople - 1; indx++) {
-        arr_names[indx] = "";
+        arr_names[indx] = '';
         this.attendees = arr_names;
         this._atteendees = arr_names_temp;
       }
@@ -152,23 +160,29 @@ export class RsvpPageComponent implements OnInit, OnDestroy {
   }
 
   onAttendeeChange(rowIndex: number) {
-    var domElement = document.getElementById('attendRow' + rowIndex) as HTMLInputElement;
+    var domElement = document.getElementById(
+      'attendRow' + rowIndex
+    ) as HTMLInputElement;
     if (domElement && rowIndex < this.attendees.length) {
       this._atteendees[rowIndex] = domElement.value;
     }
   }
 
   private sendRsvpResponse() {
+    console.log('sending RSVP form via email');
 
-    console.log("sending RSVP form via email");
+    this._atteendees = this._atteendees.filter((value) => {
+      return value && value !== '';
+    });
+    const submitterFullName =
+      this.rsvpForm.controls['submitterName'].value +
+      ' ' +
+      this.rsvpForm.controls['submitterSurname'].value;
 
-    this._atteendees = this._atteendees.filter((value) => { return value && value !== '' });
-    const submitterFullName = this.rsvpForm.controls['submitterName'].value + ' ' + this.rsvpForm.controls['submitterSurname'].value;
-
-    emailjs.init("6cKvFXLfFf7eDWXKQ");
+    emailjs.init('6cKvFXLfFf7eDWXKQ');
 
     if (this.noAttendance) {
-      emailjs.send("service_vjkvo97", "template_eit5n88", {
+      emailjs.send('service_vjkvo97', 'template_eit5n88', {
         rsvp_name: this.rsvpForm.controls['submitterName'].value,
         rsvp_lastname: this.rsvpForm.controls['submitterSurname'].value,
         rsvp_phone: this.rsvpForm.controls['phone'].value,
@@ -177,21 +191,29 @@ export class RsvpPageComponent implements OnInit, OnDestroy {
         rsvp_party: 'No',
         rsvp_people_count: 0,
         rsvp_people: '',
-        rsvp_comments: 'I will not come to the wedding: ' + this.rsvpForm.controls['comments'].value,
+        rsvp_comments:
+          'I will not come to the wedding: ' +
+          this.rsvpForm.controls['comments'].value,
       });
     } else {
-      emailjs.send("service_vjkvo97", "template_eit5n88", {
+      emailjs.send('service_vjkvo97', 'template_eit5n88', {
         rsvp_name: this.rsvpForm.controls['submitterName'].value,
         rsvp_lastname: this.rsvpForm.controls['submitterSurname'].value,
         rsvp_phone: this.rsvpForm.controls['phone'].value,
         rsvp_email: this.rsvpForm.controls['email'].value,
-        rsvp_ceremony: ((this.rsvpForm.controls['attendCeremony'].value) ?? false) ? 'Yes' : 'No',
-        rsvp_party: (this.rsvpForm.controls['attendParty'].value ?? false) ? 'Yes' : 'No',
+        rsvp_ceremony:
+          this.rsvpForm.controls['attendCeremony'].value ?? false
+            ? 'Yes'
+            : 'No',
+        rsvp_party:
+          this.rsvpForm.controls['attendParty'].value ?? false ? 'Yes' : 'No',
         rsvp_people_count: this.rsvpForm.controls['peopleCount'].value,
-        rsvp_people: submitterFullName + (this._atteendees.length > 0 ? ', ' : '') + this._atteendees.join(', '),
+        rsvp_people:
+          submitterFullName +
+          (this._atteendees.length > 0 ? ', ' : '') +
+          this._atteendees.join(', '),
         rsvp_comments: this.rsvpForm.controls['comments'].value,
       });
     }
-
   }
 }

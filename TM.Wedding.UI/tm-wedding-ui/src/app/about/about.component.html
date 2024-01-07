@@ -1,7 +1,7 @@
 <div class="container" [hidden]="!loading">
-    <ngx-spinner bdColor="rgba(0, 0, 0, 1)" size="medium" color="#f5d15a" type="square-jelly-box" [fullScreen]="true"
+    <ngx-spinner bdColor="rgba(0, 0, 0, 1)" size="medium" color="var(--white-color)" type="square-jelly-box" [fullScreen]="true"
         [showSpinner]="true">
-        <h1 style="color: #f5d15a;font-family: 'Raleway', sans-serif;"> Loading... </h1>
+        <h1 style="color: var(--white-color);font-family: 'Raleway', sans-serif;"> Loading... </h1>
     </ngx-spinner>
 </div>
 
@@ -57,7 +57,7 @@
 
                     </div>
                     <div class="col-sm-12 col-md-6">
-                        <img src="../../assets/img/crete_dark_map.png" class="d-block w-100" style="max-width:600px"
+                        <img src="../../assets/img/crete_dark_map-black.png" class="d-block w-100" style="max-width:600px"
                             alt="...">
                     </div>
                 </div>
@@ -218,7 +218,7 @@
                     <h1 style="color:black;">{{languageConfig.properties.get('about_crete_flv_title')}} <span
                             style="color:rgb(74, 74, 74);font-family: 'Raleway', sans-serif;"> | {{languageConfig.properties.get('about_crete_flv_subTitle')}}</span></h1>
                     <a class="btn btn-dark btn-lg" style="font-family: 'Raleway', sans-serif;"
-                        href="https://www.visitgreece.gr/gastronomy/?regionID=8" target="_blank">{{languageConfig.properties.get('about_crete_flv_btn')}}</a>
+                        href="https://www.cretangastronomy.gr/" target="_blank">{{languageConfig.properties.get('about_crete_flv_btn')}}</a>
                 </div>
                 <div class="col-sm-12 col-md-6 align-center-sm-mg-top" style="text-align: right;">
                     <img src="../../assets/img/crete_food.jpg" style="max-height:100px">

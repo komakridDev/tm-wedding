@@ -1,10 +1,11 @@
-body,
-html {
-    height: 100%;
+.fullscreen{
+  height: 100%;
+  margin: 0px;
+  position: fixed;
 }
 
 .bg {
-    background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url("../../assets/img/home.carousel.background.3.jpg");
+    background-image: linear-gradient(rgba(189, 187, 187, 0.5), rgba(255, 255, 255, 0.5)), url("../../assets/img/home.carousel.background.3.jpg");
     height: 100%;
     background-position: center;
     background-repeat: no-repeat;
@@ -44,11 +45,10 @@ html {
   .overlay-div-header {
     font-family: 'WeddingCaligraphic';
     font-size: 4rem;
-    color: #d9a74a;
+    color: var(--white-color);
   }
   
   .overlay-div-sub-header {
-    /*border-top:2px solid rgb(255, 255, 255);*/
     margin-top: 2rem;
     padding-top: 1rem;
     color: white;

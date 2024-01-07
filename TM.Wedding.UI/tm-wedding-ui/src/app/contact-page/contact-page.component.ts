@@ -9,22 +9,26 @@ import { Subscription } from 'rxjs';
 @Component({
   selector: 'app-contact-page',
   templateUrl: './contact-page.component.html',
-  styleUrls: ['./contact-page.component.css']
+  styleUrls: ['./contact-page.component.css'],
 })
 export class ContactPageComponent implements OnInit, OnDestroy {
-  rsvpForm: FormGroup;
-  submitterName: FormControl;
-  submitterSurname: FormControl;
-  email: FormControl;
-  phone: FormControl;
-  comments: FormControl;
-  isLoading: boolean = false;
-  errorMessage: string = "";
-
-  languageConfig: LanguageCofig;
+  protected rsvpForm: FormGroup;
+  protected submitterName: FormControl;
+  protected submitterSurname: FormControl;
+  protected email: FormControl;
+  protected phone: FormControl;
+  protected comments: FormControl;
+  protected isLoading: boolean = false;
+  protected errorMessage: string = '';
+  protected languageConfig: LanguageCofig;
+ 
   private languageConfigSubscription: Subscription | undefined;
 
-  constructor(private router: Router, private spinner: NgxSpinnerService, private languageService: LanguageService) {
+  constructor(
+    private router: Router,
+    private spinner: NgxSpinnerService,
+    private languageService: LanguageService
+  ) {
     this.languageConfig = languageService.defaultLanuageConfig;
 
     this.isLoading = false;
@@ -39,7 +43,7 @@ export class ContactPageComponent implements OnInit, OnDestroy {
       submitterSurname: this.submitterSurname,
       email: this.email,
       phone: this.phone,
-      comments: this.comments
+      comments: this.comments,
     });
   }
   ngOnInit(): void {
@@ -50,13 +54,14 @@ export class ContactPageComponent implements OnInit, OnDestroy {
       this.isLoading = false;
     }, 2000);
 
-    this.languageConfigSubscription = this.languageService.languageConfig$.subscribe((config) => {
-      this.languageConfig = config;
-    });
+    this.languageConfigSubscription =
+      this.languageService.languageConfig$.subscribe((config) => {
+        this.languageConfig = config;
+      });
   }
   ngOnDestroy(): void {
     this.isLoading = false;
-    if(this.languageConfigSubscription){
+    if (this.languageConfigSubscription) {
       this.languageConfigSubscription?.unsubscribe();
     }
   }
@@ -65,35 +70,31 @@ export class ContactPageComponent implements OnInit, OnDestroy {
     this.isLoading = true;
     this.spinner.show();
 
-    try{
+    try {
       setTimeout(() => {
         this.sendContactResponse();
         this.rsvpForm.reset();
-        this.router.navigateByUrl("/thankyou");
+        this.router.navigateByUrl('/thankyou');
         this.spinner.hide();
       }, 4000);
-
-    }
-    catch(err){
+    } catch (err) {
       this.isLoading = false;
       this.spinner.hide();
-      this.errorMessage = "There was an error during submission please try again!"
+      this.errorMessage =
+        'There was an error during submission please try again!';
     }
-
   }
 
-  private sendContactResponse(){
+  private sendContactResponse() {
+    console.log('sending Contact form via email');
 
-    console.log("sending Contact form via email");
-
-    emailjs.init("6cKvFXLfFf7eDWXKQ");
-    emailjs.send("service_vjkvo97","template_bo7u8n9",{
+    emailjs.init('6cKvFXLfFf7eDWXKQ');
+    emailjs.send('service_vjkvo97', 'template_bo7u8n9', {
       rsvp_name: this.rsvpForm.controls['submitterName'].value,
       rsvp_lastname: this.rsvpForm.controls['submitterSurname'].value,
       rsvp_phone: this.rsvpForm.controls['phone'].value,
       rsvp_email: this.rsvpForm.controls['email'].value,
       rsvp_comments: this.rsvpForm.controls['comments'].value,
     });
-
   }
 }

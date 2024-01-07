@@ -1,1 +1,24 @@
-<p>gift-page works!</p>
+<div class="container" [hidden]="!isLoading">
+    <ngx-spinner bdColor="rgba(0, 0, 0, 1)" size="medium" color="var(--white-color)" type="square-jelly-box" [fullScreen]="true" [showSpinner]="true">
+        <h1 style="color: var(--white-color);font-family: 'Raleway', sans-serif;"> Loading... </h1>
+    </ngx-spinner>
+  </div>
+<div class="bg" [hidden]="isLoading">
+    <div class="carousel-container">
+        <div class="overlay-div">
+            <div class="overlay-div-container">
+                <div class="container">
+                    <h1 class="overlay-div-header">Say you will be there</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container gift-header">
+    <h4>{{languageConfig.properties.get('gift_page_header')}}</h4>
+</div>
+<div class="container iban-info">
+    <i class="bi bi-bank"></i>
+    <h4>IBAN 2323232323232323232</h4>
+    <h4>IBAN 2323232323232323232</h4>
+</div>

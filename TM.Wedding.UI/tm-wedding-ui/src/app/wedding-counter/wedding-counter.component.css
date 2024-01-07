@@ -1,10 +1,10 @@
 .count-down-timer {
     box-shadow: 2px 6px 9px 2px rgb(0 0 0 / 20%);
     text-align: center;
-    background-color: #313b3f;
+    background-color: black;
     max-width: 800px;
     margin: 20px auto;
-    color: #d9a74a;
+    color: var(--white-color);
     border-radius: 6px;
     padding: 10px;
     font-family: var(--ff-secondary);

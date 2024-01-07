@@ -1,1 +1,123 @@
-<p>wedding-page works!</p>
+<div class="container" [hidden]="!loading">
+    <ngx-spinner bdColor="rgba(0, 0, 0, 1)" size="medium" color="var(--white-color)" type="square-jelly-box" [fullScreen]="true"
+        [showSpinner]="true">
+        <h1 style="color: var(--white-color);font-family: 'Raleway', sans-serif;"> Loading... </h1>
+    </ngx-spinner>
+</div>
+
+<div [hidden]="loading">
+
+    <div class="container" style="padding:2rem 1rem;text-align:center;width:100%;">
+        <app-wedding-counter></app-wedding-counter>
+    </div>
+
+    <div class="row fade-in">
+        <img src="../../assets/img/couple-photo-dark-mixed.jpg">
+    </div>
+
+    <div class="parent-container">
+
+        <div class="container header-container">
+            <div>
+                <h1>We are getting married</h1>
+                <p style="color:#fce389">We are excited to invite you to our wedding on 24th of August</p>
+                <p>It will be our honor and pleasure to be with us and celebrate together our wedding day</p>
+
+            </div>
+
+            <div class="container" style="text-align: center;padding-top:10px">
+                <div class="row">
+                    <div class="col-sm-12 col-md-6">
+                        <img src="../../assets/img/crete_dark_map.png" class="d-block w-100" style="max-width:600px"
+                            alt="...">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="card-container">
+        <div class="container header-container" style="text-align: center;">
+            <h1>The Wedding...</h1>
+        </div>
+        <div class="container" style="width:100%">
+            <div class="row animationContainer">
+                <div class="col-md-6 col-sm-12 col-lg-6 slide-in from-left">
+                    <div class="card">
+                        <img src="../../assets/img/wedding-card.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h1 class="card-title">Ceremony</h1>
+                            <div class="container-hashtags">
+                                <a class="card-hashtag" style="background-color: #c98066;"
+                                    href="https://maps.app.goo.gl/P8xvvCH76dtMMmxj8"
+                                    target="_blank">19:30-20:30</a>
+                                <a class="card-hashtag" style="background-color: #70ba8e;"
+                                    href="https://maps.app.goo.gl/P8xvvCH76dtMMmxj8"
+                                    target="_blank">Panormos Crete</a>
+                            </div>
+                            <p class="card-text">{{languageConfig.properties.get('about_places_card1_body')}}</p>
+                            <a href="https://maps.app.goo.gl/P8xvvCH76dtMMmxj8" target="_blank"
+                                class="btn btn-info" style="border-radius: 20px;">Click to see on Map</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-12 col-lg-6 animated slide-in from-left">
+                    <div class="card">
+                        <img src="../../assets/img/party-img.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h1 class="card-title">Party</h1>
+                            <div class="container-hashtags">
+                                <a class="card-hashtag" style="background-color:#43b3ba;"
+                                    href="https://maps.app.goo.gl/P8xvvCH76dtMMmxj8"
+                                    target="_blank">20:30-Late</a>
+                                <a class="card-hashtag" style="background-color: #70ba8e;"
+                                    href="https://maps.app.goo.gl/P8xvvCH76dtMMmxj8"
+                                    target="_blank">Panormos Crete</a>
+                            </div>
+                            <p class="card-text">{{languageConfig.properties.get('about_places_card2_body')}}</p>
+                            <a href="https://maps.app.goo.gl/P8xvvCH76dtMMmxj8" target="_blank"
+                                class="btn btn-info" style="border-radius: 20px;">Click to see on Map</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="parent-container">
+        <div class="container header-center-container">
+            <h1>About the families</h1>
+        </div>
+        <div class="details-container">
+            <p>Few words about the two families and the best man/woman</p>
+            <p class="fade-in">
+                <span class="reason-header">About groom's family</span><br>
+                <span>{{languageConfig.properties.get('about_crete_card1_body')}}</span>
+            </p>
+            <p class="fade-in">
+                <span class="reason-header">About prides family</span><br>
+                <span [ngStyle]="{'color': hideInfoDetails ? 'rgb(81, 80, 80)' : 'rgb(155, 155, 155)'}">
+                    {{languageConfig.properties.get('about_crete_card2_body')}}
+                </span>
+                <span [hidden]="hideInfoDetails"> {{languageConfig.properties.get('about_crete_card2_body_fade')}}</span>
+            </p>
+            <p [hidden]="hideInfoDetails" class="fade-in">
+                <span class="reason-header">About best man</span><br>
+                <span>{{languageConfig.properties.get('about_crete_card3_body')}}</span>
+            </p>
+            <p [hidden]="hideInfoDetails" class="fade-in">
+                <span class="reason-header">About best woman</span><br>
+                <span>{{languageConfig.properties.get('about_crete_card4_body')}}</span>
+            </p>
+            <button class="btn btn-outline-info" (click)="onShowMoreDetails()" [hidden]="!hideInfoDetails">{{languageConfig.properties.get('about_crete_btn_showmore')}} <i
+                    class="bi bi-caret-down-fill" style="padding-left:4px"></i></button>
+            <button class="btn btn-outline-info" (click)="onShowMoreDetails()" [hidden]="hideInfoDetails">{{languageConfig.properties.get('about_crete_btn_showless')}} <i
+                    class="bi bi-caret-up-fill" style="padding-left:4px"></i></button>
+        </div>
+    </div>
+
+    <div class="row fade-in">
+        <img src="../../assets/img/couple-photo.jpg">
+    </div>
+</div>

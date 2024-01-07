@@ -6,28 +6,32 @@ import { Subscription } from 'rxjs';
 @Component({
   selector: 'app-about',
   templateUrl: './about.component.html',
-  styleUrls: ['./about.component.css']
+  styleUrls: ['./about.component.css'],
 })
-export class AboutComponent implements OnInit, AfterViewInit  {
-  hideInfoDetails: boolean = true;
-  loading = true;
-
-  languageConfig: LanguageCofig;
+export class AboutComponent implements OnInit, AfterViewInit {
+  protected hideInfoDetails: boolean = true;
+  protected loading = true;
+  protected languageConfig: LanguageCofig;
+  
   private languageConfigSubscription: Subscription | undefined;
 
-  constructor(private spinner: NgxSpinnerService, private languageService: LanguageService) {
+  constructor(
+    private spinner: NgxSpinnerService,
+    private languageService: LanguageService
+  ) {
     this.languageConfig = languageService.defaultLanuageConfig;
   }
   ngOnInit(): void {
     this.spinner.show();
     this.setAnimations();
 
-    this.languageConfigSubscription = this.languageService.languageConfig$.subscribe((config) => {
-      this.languageConfig = config;
-    });
+    this.languageConfigSubscription =
+      this.languageService.languageConfig$.subscribe((config) => {
+        this.languageConfig = config;
+      });
   }
 
-  ngAfterViewInit(){
+  ngAfterViewInit() {
     setTimeout(() => {
       this.loading = false;
       this.spinner.hide();
@@ -35,7 +39,7 @@ export class AboutComponent implements OnInit, AfterViewInit  {
   }
 
   ngOnDestroy(): void {
-    if(this.languageConfigSubscription){
+    if (this.languageConfigSubscription) {
       this.languageConfigSubscription?.unsubscribe();
     }
   }
@@ -44,35 +48,35 @@ export class AboutComponent implements OnInit, AfterViewInit  {
     this.hideInfoDetails = !this.hideInfoDetails;
   }
 
-  setAnimations(){
-    const faders = document.querySelectorAll(".fade-in");
-    const sliders = document.querySelectorAll(".slide-in");
+  setAnimations() {
+    const faders = document.querySelectorAll('.fade-in');
+    const sliders = document.querySelectorAll('.slide-in');
 
     const appearOptions = {
       threshold: 0,
-      rootMargin: "0px 0px -250px 0px"
+      rootMargin: '0px 0px -250px 0px',
     };
 
     const appearOnScroll = new IntersectionObserver(function (
       entries,
       appearOnScroll
     ) {
-      entries.forEach(entry => {
+      entries.forEach((entry) => {
         if (!entry.isIntersecting) {
-          entry.target.classList.remove("appear");
+          entry.target.classList.remove('appear');
           return;
         } else {
-          entry.target.classList.add("appear");
+          entry.target.classList.add('appear');
         }
       });
     },
-      appearOptions);
+    appearOptions);
 
-    faders.forEach(fader => {
+    faders.forEach((fader) => {
       appearOnScroll.observe(fader);
     });
 
-    sliders.forEach(slider => {
+    sliders.forEach((slider) => {
       appearOnScroll.observe(slider);
     });
   }

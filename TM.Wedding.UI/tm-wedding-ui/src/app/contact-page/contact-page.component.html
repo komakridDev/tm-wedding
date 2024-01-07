@@ -1,6 +1,6 @@
 <div class="container" [hidden]="!isLoading">
-    <ngx-spinner bdColor="rgba(0, 0, 0, 1)" size="medium" color="#f5d15a" type="square-jelly-box" [fullScreen]="true" [showSpinner]="true">
-        <h1 style="color: #f5d15a;font-family: 'Raleway', sans-serif;"> Loading... </h1>
+    <ngx-spinner bdColor="rgba(0, 0, 0, 1)" size="medium" color="var(--white-color)" type="square-jelly-box" [fullScreen]="true" [showSpinner]="true">
+        <h1 style="color: var(--white-color);font-family: 'Raleway', sans-serif;"> Loading... </h1>
     </ngx-spinner>
   </div>
 <div class="bg" [hidden]="isLoading">
@@ -65,11 +65,12 @@
     
         </form>
     </div>
-    <div class="overlay-div">
+    <div class="overlay-div hor-center">
         <div class="container overlay-div-sub-header">
             <div class="container overlay-div-sub-header">
+                <i class="bi bi-telephone-outbound" style="font-size:2.8rem"></i>
                 <h4>{{languageConfig.properties.get('contact_callus')}}</h4>
-                <h5> <a [href]="'tel: 306976033107'">6976033107</a> or <a [href]="'tel: 306976033107'">6976033107</a></h5>
+                <h5> <a [href]="'tel: 6976033107'">{{languageConfig.properties.get('contact_callus1')}} (6976033107)</a><br/><a [href]="'tel: 6975123158'">{{languageConfig.properties.get('contact_callus2')}} (6975123158)</a></h5>
             </div>
         </div>
     </div>
