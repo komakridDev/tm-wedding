@@ -14,9 +14,57 @@
   margin-top:2.1rem
 }
 
+.navbar-toggler{
+  background-color: #282828;
+}
+
 @media screen and (max-width: 1000px) {
   .languageContainer{
     text-align: right;
     margin-top:2.0rem
+  }
+}
+
+@media sreen and (max-width:800px){
+  .navbar-brand{
+    display: none;
+  }
+}
+
+
+.fixed-top-navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #333;
+  z-index: 1000;
+}
+
+.fixed-bottom-navbar {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: black;
+  z-index: 1000;
+  transition: transform 0.3s ease-in-out;
+  padding-left:20px;
+  padding-bottom:20px;
+}
+
+@media (max-width: 800px) {
+  .fixed-top-navbar {
+    display: none;
+  }
+  .fixed-bottom-navbar {
+    display: block;
+  }
+}
+
+@media (min-width: 801px) {
+  .fixed-top-navbar {
+    display: block;
+  }
+  .fixed-bottom-navbar {
+    display: none;
   }
 }

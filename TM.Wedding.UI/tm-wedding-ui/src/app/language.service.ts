@@ -85,8 +85,11 @@ export class LanguageService {
     this.greekConfig.properties.set("header_rsvp", "RSVP");
     this.greekConfig.properties.set("header_gift", "Λίστα Γάμου");
     this.greekConfig.properties.set("header_contact", "Επικοινωνία");
+    this.greekConfig.properties.set("home_blurb",`Καλώς ήρθατε στην ιστοσελίδα μας!
+    Ερωτευτήκαμε στην Βόρεια Ελλάδα και αποφασίσαμε να ταξιδέψουμε στην Νότια για να φορέσουμε τις βέρες μας και να ξεκινήσουμε την περιπέτεια του γάμου.
+    Η αντίστροφη μέτρηση ξεκίνησε!`);
     //Counter
-    this.greekConfig.properties.set("home_ctr_label", "Αντίστροφη Μέτρηση - Άυγουστος 24, 2024");
+    this.greekConfig.properties.set("home_ctr_label", "Αντίστροφη Μέτρηση");
     this.greekConfig.properties.set("home_ctr_days", "Ημέρες");
     this.greekConfig.properties.set("home_ctr_hours", "Ώρες");
     this.greekConfig.properties.set("home_ctr_mins", "Λεπτά");
@@ -116,10 +119,10 @@ export class LanguageService {
     this.greekConfig.properties.set("rsvp_pos_option_a", "Θα παρευρεθώ στην τελετή");
     this.greekConfig.properties.set("rsvp_pos_option_b", "Θα παρευρεθώ στο γλέντι");
     this.greekConfig.properties.set("rsvp_contact_header", "Προσωπικές Πληροφορίες");
-    this.greekConfig.properties.set("rsvp_firstname", "Παρακαλώ εισάγετε το όνομά σας");
-    this.greekConfig.properties.set("rsvp_lastname", "Παρακαλώ εισάγετε το επιθετό σας");
-    this.greekConfig.properties.set("rsvp_phone", "Παρακαλώ εισάγετε το τηλεφωνό σας");
-    this.greekConfig.properties.set("rsvp_email", "Παρακαλώ εισάγετε το email σας");
+    this.greekConfig.properties.set("rsvp_firstname", "Eισάγετε το όνομά σας*");
+    this.greekConfig.properties.set("rsvp_lastname", "Eισάγετε το επιθετό σας*");
+    this.greekConfig.properties.set("rsvp_phone", "Eισάγετε το τηλεφωνό σας (Προαιρετικό)");
+    this.greekConfig.properties.set("rsvp_email", "Eισάγετε το email σας (Προαιρετικό)");
     this.greekConfig.properties.set("rsvp_subheader_people", "Παρευρισκόμενοι");
     this.greekConfig.properties.set("rsvp_people_count", "Αριθμός ατόμων");
     this.greekConfig.properties.set("rsvp_extra_attendee", "Παρακαλώ εισάγετε ονοματεπώνυμο");
@@ -136,7 +139,7 @@ export class LanguageService {
     this.greekConfig.properties.set("contact_comments", "Επιπρόσθετα σχόλια");
     this.greekConfig.properties.set("contact_submit", "Υποβολή");
     this.greekConfig.properties.set("contact_submitting", "Παρακαλώ περιμένετε...");
-    this.greekConfig.properties.set("contact_callus", "H΄ επικοινωνήστε μαζί μας στο:");
+    this.greekConfig.properties.set("contact_callus", "H΄ επικοινωνήστε μαζί μας");
     this.greekConfig.properties.set("contact_callus1", "Θοδωρής");
     this.greekConfig.properties.set("contact_callus2", "Μαριλένα");
 
@@ -247,8 +250,11 @@ export class LanguageService {
     this.englishConfig.properties.set("header_rsvp", "RSVP");
     this.englishConfig.properties.set("header_gift", "Gift List");
     this.englishConfig.properties.set("header_contact", "Contact");
+    this.englishConfig.properties.set("home_blurb",`Welcome to our website!
+    We got in love in the North Greece and we decided to get married and start our common adventure in the Southern part of it.
+    The final countdown has get started!`);
     //Counter
-    this.englishConfig.properties.set("home_ctr_label", "Countdown to August 24, 2024");
+    this.englishConfig.properties.set("home_ctr_label", "Countdown");
     this.englishConfig.properties.set("home_ctr_days", "Days");
     this.englishConfig.properties.set("home_ctr_hours", "Hours");
     this.englishConfig.properties.set("home_ctr_mins", "Minutes");
@@ -278,10 +284,10 @@ export class LanguageService {
     this.englishConfig.properties.set("rsvp_pos_option_a", "Will you attend the wedding ceremony?");
     this.englishConfig.properties.set("rsvp_pos_option_b", "Will you attend the party?");
     this.englishConfig.properties.set("rsvp_contact_header", "Contact Details");
-    this.englishConfig.properties.set("rsvp_firstname", "Enter your first name");
-    this.englishConfig.properties.set("rsvp_lastname", "Enter your last name");
-    this.englishConfig.properties.set("rsvp_phone", "Please specify your phone number");
-    this.englishConfig.properties.set("rsvp_email", "Please specify your email address");
+    this.englishConfig.properties.set("rsvp_firstname", "Enter your first name*");
+    this.englishConfig.properties.set("rsvp_lastname", "Enter your last name*");
+    this.englishConfig.properties.set("rsvp_phone", "Specify your phone number (Optional)");
+    this.englishConfig.properties.set("rsvp_email", "Specify your email address (Optional)");
     this.englishConfig.properties.set("rsvp_subheader_people", "Reservation Details");
     this.englishConfig.properties.set("rsvp_people_count", "Number of people");
     this.englishConfig.properties.set("rsvp_extra_attendee", "Enter the fullname of the attendee");
@@ -298,7 +304,7 @@ export class LanguageService {
     this.englishConfig.properties.set("contact_comments", "Enter any additional comments");
     this.englishConfig.properties.set("contact_submit", "Submit");
     this.englishConfig.properties.set("contact_submitting", "Submitting");
-    this.englishConfig.properties.set("contact_callus", "Or give us a call on:");
+    this.englishConfig.properties.set("contact_callus", "Or contant us via");
     this.englishConfig.properties.set("contact_callus1", "Thodoris");
     this.englishConfig.properties.set("contact_callus2", "Marilena");
 

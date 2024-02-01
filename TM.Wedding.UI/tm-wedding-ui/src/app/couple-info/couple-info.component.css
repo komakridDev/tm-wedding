@@ -1,76 +1,87 @@
-p{
-    font-family: 'Roboto', sans-serif;
+p {
+  font-family: "Roboto", sans-serif;
 }
 
-h3{
-    font-family: 'Roboto', sans-serif;
-    color:darkgray;
+h3 {
+  font-family: "Roboto", sans-serif;
+  color: darkgray;
 }
 
-span{
-    font-family: var(--ff-secondary);
-    font-size:1.2rem;
-    color:var(--white-color)
+span {
+  font-family: var(--ff-secondary);
+  font-size: 1.2rem;
+  color: var(--white-color);
 }
 
-.couple-card{
-    width: 100%;
-    opacity:0.8;
-    height:100%;
+.couple-card {
+  width: 100%;
+  opacity: 0.8;
+  height: 100%;
+  padding: 20px;
+  border: 2px solid goldenrod;
 }
 
-.couple-card:hover{
-    opacity:1;
-    border:2px solid goldenrod;
-    border-radius:20px;
-    padding:20px
+.couple-card:hover {
+  opacity: 1;
+  border: 2px solid goldenrod;
+  border-radius: 20px;
+  padding: 10px;
 }
 
-.couple-card:active{
-    opacity:1;
-    border:2px solid goldenrod;
-    border-radius:20px;
-    padding:20px
+.couple-card:active {
+  opacity: 1;
+  border: 2px solid goldenrod;
+  border-radius: 20px;
+  padding: 10px;
 }
 
-.coupleInfo-mainHeader{
-    padding-bottom:1rem;
+.coupleInfo-mainHeader {
+  padding-bottom: 1rem;
 }
 
 /* Animations */
 .fade-in {
-    opacity: 0;
-    transition: opacity 1s ease-in;
-  }
-  
-  .fade-in.appear {
-    opacity: 1;
-  }
+  opacity: 0;
+  transition: opacity 1s ease-in;
+}
 
-  .from-left {
-    grid-column: 2 / 3;
-    -webkit-transform: translateX(-50%);
-    transform: translateX(-50%);
-  }
-  
-  .from-right {
-    grid-column: 3 / 4;
-    -webkit-transform: translateX(50%);
-    transform: translateX(50%);
-  }
-  
-  .from-left,
-  .from-right {
-    transition: opacity 400ms ease-in, -webkit-transform 800ms ease-in;
-    transition: opacity 400ms ease-in, transform 800ms ease-in;
-    transition: opacity 400ms ease-in, transform 800ms ease-in,
-      -webkit-transform 800ms ease-in;
-    opacity: 0;
-  }
-  
-  .from-left.appear,
-  .from-right.appear {
-    -webkit-transform: translateX(0);
-    transform: translateX(0);
-    opacity: 1;
-  }
+.fade-in.appear {
+  opacity: 1;
+}
+
+.from-left {
+  grid-column: 2 / 3;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+
+.from-right {
+  grid-column: 3 / 4;
+  -webkit-transform: translateX(50%);
+  transform: translateX(50%);
+}
+
+.from-left,
+.from-right {
+  transition: opacity 400ms ease-in, -webkit-transform 800ms ease-in;
+  transition: opacity 400ms ease-in, transform 800ms ease-in;
+  transition: opacity 400ms ease-in, transform 800ms ease-in,
+    -webkit-transform 800ms ease-in;
+  opacity: 0;
+}
+
+.from-left.appear,
+.from-right.appear {
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.card-title {
+  font-family: WeddingCaligraphic;
+  font-size: 1.8rem;
+}
+
+.card-body {
+  padding-bottom: 0px;
+}

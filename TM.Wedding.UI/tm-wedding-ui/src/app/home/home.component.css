@@ -11,3 +11,9 @@
     padding-top:0px;
     padding-bottom:40px;
 }
+
+.couple-info-mainHeader{
+    padding-bottom:10px;
+    font-family: var(--ff-secondary);
+    color:#e1d3b7;
+}
