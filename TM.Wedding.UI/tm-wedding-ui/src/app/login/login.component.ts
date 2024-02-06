@@ -38,7 +38,7 @@ export class LoginComponent implements OnInit, OnDestroy {
     this.spinner.show();
     var psw = this.loginForm.controls['password'].value;
 
-    if (psw === 'tm2024') {
+    if (psw === '240824') {
       sessionStorage.setItem('AuthStatus', 'LoggedIn');
       sessionStorage.setItem('SessionToken', psw);
 

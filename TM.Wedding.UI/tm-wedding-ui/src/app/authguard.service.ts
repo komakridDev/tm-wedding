@@ -8,7 +8,7 @@ import { of } from 'rxjs';
 export class AuthguardService {
 
   private authStatusKey = "LoggedIn";
-  private sessionTokenKey = "tm2024"
+  private sessionTokenKey = "240824"
 
   constructor() {
   }

@@ -131,7 +131,7 @@ export class LanguageService {
     this.greekConfig.properties.set("rsvp_submitting", "Παρακαλώ περιμένετε...");
 
     //Contact Page
-    this.greekConfig.properties.set("contact_header", "Συμπληρώστε την παρακάτω φόρμα με την ερώτησή σας, και θα επικοινωνήσουμε μαζί σας το συντομότερο δυνατόν");
+    this.greekConfig.properties.set("contact_header", "Συμπληρώστε την παρακάτω φόρμα με την ερώτησή σας και θα επικοινωνήσουμε μαζί σας το συντομότερο δυνατόν");
     this.greekConfig.properties.set("contact_firstname", "Παρακαλώ εισάγετε το όνομά σας");
     this.greekConfig.properties.set("contact_lastname", "Παρακαλώ εισάγετε το επίθετό σας");
     this.greekConfig.properties.set("contact_phone", "Παρακαλώ εισάγετε το τηλεφωνό σας");
@@ -171,7 +171,7 @@ export class LanguageService {
     this.greekConfig.properties.set("info_stay_explore_more", "ΔΕΙΤΕ ΠΕΡΙΣΣΟΤΕΡΑ");
     this.greekConfig.properties.set("info_stay_additional", "Μπορείτε επίσης να ταξιδέψετε ακτοπλοϊκά ή αεροπορικά απο Αθήνα, Πειραιά και Θεσσαλονική προς Χανιά, αλλά προτείνουμε το Ηράκλειο, καθώς ειναι πιο κοντά στην τοποθεσία του γάμου.");
     this.greekConfig.properties.set("info_food_header", "Τι να δοκιμάσετε...");
-    this.greekConfig.properties.set("info_visit_header", "Καφε & Ποτό...");
+    this.greekConfig.properties.set("info_visit_header", "Καφέ & Ποτό...");
     this.greekConfig.properties.set("info_beach_header", "Κοντινές Παραλίες...");
     this.greekConfig.properties.set("info_stay_useful_phones", "Χρήσιμα Τηλέφωνα");
     this.greekConfig.properties.set("info_stay_useful_phones1", "Κέντρο Υγείας Περάματος");
@@ -238,7 +238,7 @@ export class LanguageService {
     this.greekConfig.properties.set('gift_page_copy_btn','Αντιγραφή στο πρόχειρο');
 
     //Gift
-    this.greekConfig.properties.set("gift_page_header","Αν και η χαρά να σας έχουμε μαζί μας την ημέρα του γάμου μας ξεπερνά κάθε υλικό δώρο, η υποστήριξή σας θα ήταν θερμά ευπρόσδεκτη και πραγματικά εκτιμημένη.");
+    this.greekConfig.properties.set("gift_page_header","Η παρουσία σας και η ευχή σας στο γαμο μας είναι τα πιο πολύτιμα δωρα για εμάς. Παρακάτω ωστόσο υπάρχει προαιρετικη λίστα γάμου για κάποιον που το επιθυμεί.");
     //αν θέλετε να συνεισφέρετε με άλλο τρόπο
 
     //Header
