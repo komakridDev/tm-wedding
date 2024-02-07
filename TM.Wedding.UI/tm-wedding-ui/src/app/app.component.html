@@ -1,6 +1,6 @@
-<div [hidden]="!userLoggedIn" style="width:100%;padding:10px 0px 0px 0px;background-color:#282828; text-align:center;font-size:2.8rem; color:#c49c73;font-style: italic;">
+<div [hidden]="!userLoggedIn" style="width:100%;padding:10px 0px 0px 0px;background-color: black; text-align:center;font-size:2.8rem; color:#dec89d;font-style: italic;" id="homeHeader">
   <h2 style="font-family:'Parisienne', cursive;font-size:1rem">24 August 2024</h2>
-  <h1 style="font-family:'Parisienne', cursive;font-size:2.6rem">Thodoris & Marilena</h1>
+  <h1 style="font-family:'Parisienne', cursive;font-size:2.6rem" id="topHeaderBanner">Thodoris & Marilena</h1>
 </div>
 
 <div class="container" [hidden]="!userLoggedIn">
@@ -13,7 +13,6 @@
 
 <audio controls loop volume="0.5" muted #audio style="visibility: hidden">
   <source src="../assets/audio/wedding_theme.mp3" type="audio/mpeg">
-  <!-- Add additional <source> elements for other audio formats if needed -->
 </audio>
 
 <button #button style="visibility: hidden"></button>

@@ -1,7 +1,7 @@
-import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnInit, Renderer2 } from '@angular/core';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { LanguageCofig, LanguageService } from '../language.service';
-import { Subscription } from 'rxjs';
+import { Subscription, first } from 'rxjs';
 
 @Component({
   selector: 'app-info-page',
@@ -29,11 +29,17 @@ export class InfoPageComponent implements OnInit, AfterViewInit {
       this.languageService.languageConfig$.subscribe((config) => {
         this.languageConfig = config;
       });
+
+      const homeHeader = document.getElementById("homeHeader");
+      if(homeHeader){
+        homeHeader.style.display = "block";
+      }
   }
 
   ngAfterViewInit() {
     setTimeout(() => {
       this.loading = false;
+      window.scrollTo(0, 0);
       this.spinner.hide();
     }, 2000);
   }

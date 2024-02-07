@@ -5,11 +5,11 @@ import { Router } from '@angular/router';
 import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
-  selector: 'app-thank-you',
-  templateUrl: './thank-you.component.html',
-  styleUrls: ['./thank-you.component.css']
+  selector: 'app-thank-you-negative',
+  templateUrl: './thank-you-negative.component.html',
+  styleUrls: ['./thank-you-negative.component.css']
 })
-export class ThankYouComponent {
+export class ThankYouNegativeComponent {
   protected languageConfig: LanguageCofig;
 
   private languageConfigSubscription: Subscription | undefined;

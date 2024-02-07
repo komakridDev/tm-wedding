@@ -10,6 +10,8 @@ import { ContactPageComponent } from './contact-page/contact-page.component';
 import { LoginComponent } from './login/login.component';
 import { AuthGuard } from './auth.guard';
 import { ThankYouComponent } from './thank-you/thank-you.component';
+import { ContactSubmitComponent } from './contact-submit/contact-submit.component';
+import { ThankYouNegativeComponent } from './thank-you-negative/thank-you-negative.component';
 
 const routes: Routes = [
 
@@ -21,7 +23,9 @@ const routes: Routes = [
   { path: 'gifts', component: GiftPageComponent, canActivate: [AuthGuard] },
   { path: 'contact', component: ContactPageComponent, canActivate: [AuthGuard] },
   { path: 'thankyou', component: ThankYouComponent, canActivate: [AuthGuard] },
+  { path: 'thankyounegative', component: ThankYouNegativeComponent, canActivate: [AuthGuard] },
   { path: 'login', component: LoginComponent },
+  { path: 'contactsubmit', component: ContactSubmitComponent, canActivate: [AuthGuard]}
 ];
 
 @NgModule({

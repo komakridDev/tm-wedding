@@ -28,6 +28,8 @@ import { InfoPageComponent } from './info-page/info-page.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ThankYouComponent } from './thank-you/thank-you.component';
 import { NgxSpinnerModule } from 'ngx-spinner';
+import { ContactSubmitComponent } from './contact-submit/contact-submit.component';
+import { ThankYouNegativeComponent } from './thank-you-negative/thank-you-negative.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +48,9 @@ import { NgxSpinnerModule } from 'ngx-spinner';
     AboutComponent,
     ContactPageComponent,
     InfoPageComponent,
-    ThankYouComponent
+    ThankYouComponent,
+    ThankYouNegativeComponent,
+    ContactSubmitComponent
   ],
   imports: [
     BrowserModule,

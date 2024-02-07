@@ -17,7 +17,7 @@ export class CoupleInfoComponent implements OnInit {
 
   ngOnInit(): void {
     this.setAnimations();
-
+    window.scrollTo(0, 0);
     this.languageConfigSubscription =
       this.languageService.languageConfig$.subscribe((config) => {
         this.languageConfig = config;

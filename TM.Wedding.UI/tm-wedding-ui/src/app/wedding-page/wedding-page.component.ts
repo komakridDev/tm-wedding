@@ -28,11 +28,17 @@ export class WeddingPageComponent implements OnInit, AfterViewInit {
       this.languageService.languageConfig$.subscribe((config) => {
         this.languageConfig = config;
       });
+
+      const homeHeader = document.getElementById("homeHeader");
+      if(homeHeader){
+        homeHeader.style.display = "block";
+      }
   }
 
   ngAfterViewInit() {
     setTimeout(() => {
       this.loading = false;
+      window.scrollTo(0, 0);
       this.spinner.hide();
     }, 2000);
   }

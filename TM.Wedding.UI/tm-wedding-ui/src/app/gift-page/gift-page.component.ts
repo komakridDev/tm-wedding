@@ -32,6 +32,7 @@ export class GiftPageComponent implements OnInit, OnDestroy {
     this.spinner.show();
     setTimeout(() => {
       this.spinner.hide();
+      window.scrollTo(0, 0);
       this.isLoading = false;
     }, 2000);
 
@@ -39,6 +40,11 @@ export class GiftPageComponent implements OnInit, OnDestroy {
       this.languageService.languageConfig$.subscribe((config) => {
         this.languageConfig = config;
       });
+
+      const homeHeader = document.getElementById("homeHeader");
+      if(homeHeader){
+        homeHeader.style.display = "block";
+      }
   }
   ngOnDestroy(): void {
     this.isLoading = false;

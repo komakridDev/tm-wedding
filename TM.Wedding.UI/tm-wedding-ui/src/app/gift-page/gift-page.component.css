@@ -14,7 +14,7 @@
 .overlay-div-header {
   font-family: "WeddingCaligraphic";
   font-size: 4rem;
-  color: white;
+  color: rgb(0, 0, 0);
 }
 
 .overlay-div-sub-header {
@@ -31,11 +31,12 @@
       rgba(255, 255, 255, 0.1),
       rgba(255, 255, 255, 0.1)
     ),
-    url("../../assets/img/gift_card.jpg");
+    url("../../assets/img/home.event.jpg");
   height: 100%;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  min-height: 600px;
 }
 
 input {

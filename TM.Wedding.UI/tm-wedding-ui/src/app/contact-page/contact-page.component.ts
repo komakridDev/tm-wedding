@@ -35,7 +35,7 @@ export class ContactPageComponent implements OnInit, OnDestroy {
     this.submitterName = new FormControl('', [Validators.required]);
     this.submitterSurname = new FormControl('', [Validators.required]);
     this.email = new FormControl('');
-    this.phone = new FormControl('', [Validators.required]);
+    this.phone = new FormControl('', [Validators.required, Validators.minLength(10), Validators.maxLength(10), Validators.pattern("^69[0-9]*")]);
     this.comments = new FormControl('');
 
     this.rsvpForm = new FormGroup({
@@ -58,6 +58,11 @@ export class ContactPageComponent implements OnInit, OnDestroy {
       this.languageService.languageConfig$.subscribe((config) => {
         this.languageConfig = config;
       });
+
+      const homeHeader = document.getElementById("homeHeader");
+      if(homeHeader){
+        homeHeader.style.display = "none";
+      }
   }
   ngOnDestroy(): void {
     this.isLoading = false;
@@ -74,7 +79,7 @@ export class ContactPageComponent implements OnInit, OnDestroy {
       setTimeout(() => {
         this.sendContactResponse();
         this.rsvpForm.reset();
-        this.router.navigateByUrl('/thankyou');
+        this.router.navigateByUrl('/contactsubmit');
         this.spinner.hide();
       }, 4000);
     } catch (err) {

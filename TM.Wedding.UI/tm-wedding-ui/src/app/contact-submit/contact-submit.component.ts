@@ -5,11 +5,11 @@ import { Router } from '@angular/router';
 import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
-  selector: 'app-thank-you',
-  templateUrl: './thank-you.component.html',
-  styleUrls: ['./thank-you.component.css']
+  selector: 'app-contact-submit',
+  templateUrl: './contact-submit.component.html',
+  styleUrls: ['./contact-submit.component.css']
 })
-export class ThankYouComponent {
+export class ContactSubmitComponent {
   protected languageConfig: LanguageCofig;
 
   private languageConfigSubscription: Subscription | undefined;

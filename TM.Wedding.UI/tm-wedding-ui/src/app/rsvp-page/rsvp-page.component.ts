@@ -81,6 +81,7 @@ export class RsvpPageComponent implements OnInit, OnDestroy {
     this.spinner.show();
     setTimeout(() => {
       this.spinner.hide();
+      window.scrollTo(0, 0);
       this.isLoading = false;
     }, 2000);
 
@@ -88,6 +89,11 @@ export class RsvpPageComponent implements OnInit, OnDestroy {
       this.languageService.languageConfig$.subscribe((config) => {
         this.languageConfig = config;
       });
+
+      const homeHeader = document.getElementById("homeHeader");
+      if(homeHeader){
+        homeHeader.style.display = "block";
+      }
   }
   ngOnDestroy(): void {
     this.isLoading = false;
@@ -104,7 +110,13 @@ export class RsvpPageComponent implements OnInit, OnDestroy {
       setTimeout(() => {
         this.sendRsvpResponse();
         this.rsvpForm.reset();
-        this.router.navigateByUrl('/thankyou');
+
+        if(!this.noAttendance){
+          this.router.navigateByUrl('/thankyou');
+        }else{
+          this.router.navigateByUrl('/thankyounegative');
+        }
+
         this.spinner.hide();
       }, 4000);
     } catch (err) {

@@ -11,34 +11,34 @@
         <div class="row">
             <div class="col">
                 <div class="card couple-card fade-in">
-                    <img src="../../assets/img/couple-wedding-photo.jpg" class="card-img-top" alt="..." >
+                    <img src="../../assets/img/couple_home.jpg" class="card-img-top" alt="..." >
                     <div class="card-body" style="text-align:center">
                         <div class="card-body">
-                            <h5 class="card-title">Προσκλητηρίο Γάμου</h5>
+                            <h5 class="card-title">{{languageConfig.properties.get('wedding_page_header')}}</h5>
                         </div>
                         <p>
-                            Είμαστε έτοιμοι να ξεκινήσουμε αυτή την τρελή περιπέτεια που ονομάζεται γάμος! Ναι, αποφασίσαμε να αγνοήσουμε τον ενθουσιασμό μας για την ελευθερία και να προχωρήσουμε σε μια δέσμευση για την υπόλοιπη ζωή μας. Με χαρά, σας προσκαλούμε στο γάμο μας που θα γίνει στις 24 Αυγούστου 2024 στο εκκλησάκι του Αγίου Νικολάου, στη Σκεπαστή Αρένα και ώρα 19.30. 
+                            {{languageConfig.properties.get('wedding_page_par')}}
                         </p>
                         <div class="card-body">
-                            <h5 class="card-title">Οικογένειες</h5>
+                            <h5 class="card-title">{{languageConfig.properties.get('wedding_page_subheader1')}}</h5>
                         </div>
                         <p>
-                            Σιαπάκας Ιωάννης <span style="font-family:'Courier New', Courier, monospace">&</span> Καλλιόπη Χατζούλη
+                            {{languageConfig.properties.get('wedding_page_text1a')}} <span style="font-family:'Courier New', Courier, monospace">&</span> {{languageConfig.properties.get('wedding_page_text1b')}}
                         </p>
                         <p>
-                            Κοϊνάκης Ιωάννης <span style="font-family:'Courier New', Courier, monospace">&</span> Λαμπρινή Νικηφόρου 
+                            {{languageConfig.properties.get('wedding_page_text2a')}} <span style="font-family:'Courier New', Courier, monospace">&</span> {{languageConfig.properties.get('wedding_page_text2b')}}
                         </p>
                         <div class="card-body">
-                            <h5 class="card-title">Κουμπάροι</h5>
+                            <h5 class="card-title">{{languageConfig.properties.get('wedding_page_text3')}}</h5>
                         </div>
                         <p>
-                            <span>Πουλιάσης Σταμάτης</span><br>
-                            <span>Δημητρίου Μαίρη</span><br>
-                            <span>Βασσάλου Ελένη </span>
+                            <span>{{languageConfig.properties.get('wedding_page_text4')}}</span><br>
+                            <span>{{languageConfig.properties.get('wedding_page_text5')}}</span><br>
+                            <span>{{languageConfig.properties.get('wedding_page_text6')}}</span>
                         </p>
                         <div style="margin-top:60px">
                             <p style="margin-bottom:0px">
-                                Μετα το μυστήριο θα ακολουθήσει δεξίωση στον ίδιο χώρο.
+                                {{languageConfig.properties.get('wedding_page_bottom_txt')}}
                             </p>
                         </div>
                     </div>
@@ -62,13 +62,13 @@
         <div class="overlay-div">
             <div class="overlay-div-container">
                 <div class="container">
-                    <h1 style="color:rgb(9, 9, 9);font-family: 'EB Garamond', serif; font-style:italic">Προετοιμασία</h1>
-                    <h1 style="color:rgb(0, 0, 0);font-family: 'EB Garamond', serif; font-style:italic">γαμπρού <span style="font-family:'Courier New', Courier, monospace">&</span> νύφης</h1>
+                    <h1 style="color:rgb(9, 9, 9);font-family: 'EB Garamond', serif; font-style:italic">{{languageConfig.properties.get('wedding_page_text7a')}}</h1>
+                    <h1 style="color:rgb(0, 0, 0);font-family: 'EB Garamond', serif; font-style:italic">{{languageConfig.properties.get('wedding_page_text7b')}} <span style="font-family:'Courier New', Courier, monospace">&</span> {{languageConfig.properties.get('wedding_page_text7c')}}</h1>
                 </div>
                 <div class="container overlay-div-sub-header">
                     <div class="overlay-div-day-header">
-                        <h4 style="font-style:italic;color:black">Ώρα: 16.00</h4>
-                        <h4 style="font-style:italic;color:black">Τοποθεσία: Κάλυβος Μυλοποτάμου</h4>
+                        <h4 style="font-style:italic;color:black">{{languageConfig.properties.get('wedding_page_text7d')}}</h4>
+                        <h4 style="font-style:italic;color:black">{{languageConfig.properties.get('wedding_page_text7e')}}</h4>
                     </div>
                     <div class="row" style="text-align: center; justify-content: center;margin-top:1rem">
                         <a class="btn" href="https://maps.app.goo.gl/jBAm1GY2APRmNy2z6" target="_blank" style="width:50%;background-color:var(--white-color)">{{languageConfig.properties.get('home_info_btn_map')}}</a>
