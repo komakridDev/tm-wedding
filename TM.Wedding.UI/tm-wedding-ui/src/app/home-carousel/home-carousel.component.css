@@ -22,7 +22,7 @@
 }
 
 .overlay-div-header {
-  font-family: 'WeddingCaligraphic';
+  font-family: "WeddingCaligraphic";
   font-size: 4rem;
   color: var(--white-color);
 }
@@ -37,7 +37,7 @@
 
 .overlay-div-sub-header-day {
   font-size: 2.4rem;
-  font-family: 'Major Mono Display', monospace;
+  font-family: "Major Mono Display", monospace;
 }
 
 .overlay-div-day-header {
@@ -82,22 +82,20 @@
   opacity: 1;
 }
 
-
-
 .animation-container {
   display: block;
   position: relative;
   width: 800px;
   max-width: 100%;
   margin: 0 auto;
-  
+
   .lightning-container {
     position: absolute;
     top: 50%;
     left: 0;
     display: flex;
     transform: translateY(-50%);
-    
+
     .lightning {
       position: absolute;
       display: block;
@@ -109,7 +107,7 @@
       animation-name: woosh;
       animation-duration: 1.5s;
       animation-iteration-count: infinite;
-      animation-timing-function: cubic-bezier(0.445, 0.050, 0.550, 0.950);
+      animation-timing-function: cubic-bezier(0.445, 0.05, 0.55, 0.95);
       animation-direction: alternate;
 
       &.white {
@@ -124,8 +122,7 @@
       }
     }
   }
-  
-  
+
   .boom-container {
     position: absolute;
     display: flex;
@@ -136,13 +133,13 @@
     transform: translateY(-50%);
     left: 200px;
     top: -145px;
-    
+
     .shape {
       display: inline-block;
       position: relative;
       opacity: 0;
       transform-origin: center center;
-      
+
       &.triangle {
         width: 0;
         height: 0;
@@ -155,7 +152,7 @@
         border-width: 0 2.5px 5px 2.5px;
         border-color: transparent transparent #42e599 transparent;
         animation-name: boom-triangle;
-        
+
         &.big {
           margin-left: -25px;
           border-width: 0 5px 10px 5px;
@@ -163,7 +160,7 @@
           animation-name: boom-triangle-big;
         }
       }
-      
+
       &.disc {
         width: 8px;
         height: 8px;
@@ -174,7 +171,7 @@
         animation-timing-function: ease-out;
         animation-iteration-count: infinite;
       }
-      
+
       &.circle {
         width: 20px;
         height: 20px;
@@ -184,43 +181,49 @@
         animation-iteration-count: infinite;
         border-radius: 100%;
         margin-left: -30px;
-        
+
         &.white {
           border: 1px solid white;
         }
-        
+
         &.big {
           width: 40px;
           height: 40px;
           margin-left: 0px;
-          
+
           &.white {
             border: 2px solid white;
           }
         }
       }
-      
+
       &:after {
         background-color: rgba(178, 215, 232, 0.2);
       }
     }
-    
+
     .shape {
-      &.triangle, &.circle, &.circle.big, &.disc {
-        animation-delay: .38s;
+      &.triangle,
+      &.circle,
+      &.circle.big,
+      &.disc {
+        animation-delay: 0.38s;
         animation-duration: 3s;
       }
-      
+
       &.circle {
         animation-delay: 0.4s;
       }
     }
-    
+
     &.second {
       left: 485px;
       top: 155px;
       .shape {
-        &.triangle, &.circle, &.circle.big, &.disc {
+        &.triangle,
+        &.circle,
+        &.circle.big,
+        &.disc {
           animation-delay: 2s;
         }
         &.circle {
@@ -256,7 +259,7 @@
   70.1% {
     transform: translate(500px, 150px) rotate(-37deg);
   }
-  
+
   85% {
     width: 50px;
   }
@@ -288,7 +291,7 @@
   5% {
     opacity: 1;
   }
-  
+
   40% {
     opacity: 0;
     transform: scale(2.5) translate(50px, -50px) rotate(360deg);
@@ -304,12 +307,12 @@
   5% {
     opacity: 1;
   }
-  
+
   30% {
     opacity: 0;
     transform: scale(3) translate(20px, 40px) rotate(360deg);
   }
-  
+
   100% {
   }
 }
@@ -326,6 +329,23 @@
     transform: scale(2) translate(-70px, -30px);
   }
   100% {
-    
+  }
+}
+
+.div_glowing {
+  animation: glowing 2000ms infinite;
+  transition: box-shadow 1s ease-in-out;
+  box-shadow: 0 0 20px rgba(52, 152, 219, 0.8);
+}
+
+@keyframes glowing {
+  0% {
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.8);
+  }
+  50% {
+    box-shadow: 0 0 28px rgba(52, 152, 219, 0.8);
+  }
+  100% {
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.8);
   }
 }

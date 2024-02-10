@@ -1,235 +1,459 @@
 <div class="container" [hidden]="!loading">
-    <ngx-spinner bdColor="rgba(0, 0, 0, 1)" size="medium" color="var(--white-color)" type="square-jelly-box" [fullScreen]="true"
-        [showSpinner]="true">
-        <h1 style="color: var(--white-color);font-family: 'Raleway', sans-serif;"> Loading... </h1>
-    </ngx-spinner>
+  <ngx-spinner
+    bdColor="rgba(0, 0, 0, 1)"
+    size="medium"
+    color="var(--white-color)"
+    type="square-jelly-box"
+    [fullScreen]="true"
+    [showSpinner]="true"
+  >
+    <h1 style="color: var(--white-color); font-family: 'Raleway', sans-serif">
+      Loading...
+    </h1>
+  </ngx-spinner>
 </div>
 
 <div [hidden]="loading">
-    <div class="row fade-in">
-        <img src="../../assets/img/crete-night.jpg">
-    </div>
+  <div class="fade-in" style="width:100%;">
+    <img style="max-width:100%" src="../../assets/img/crete-night.jpg" />
+  </div>
 
-    <div class="parent-container">
+  <div class="parent-container">
+    <div class="container header-container">
+      <div>
+        <h1>{{ languageConfig.properties.get("about_header") }}</h1>
+        <p style="color: #fce389">
+          {{ languageConfig.properties.get("about_subheader") }}
+        </p>
+        <p>{{ languageConfig.properties.get("about_top_paragraph") }}</p>
+      </div>
 
-        <div class="container header-container">
-            <div>
-                <h1>{{languageConfig.properties.get('about_header')}}</h1>
-                <p style="color:#fce389">{{languageConfig.properties.get('about_subheader')}}</p>
-                <p>{{languageConfig.properties.get('about_top_paragraph')}}</p>
-
+      <div class="container" style="text-align: center; padding-top: 10px">
+        <div class="row">
+          <div class="col-sm-12 col-md-6" style="text-align: left">
+            <div class="flex-div-container">
+              <div style="width: 30%">
+                <img
+                  src="../../assets/img/inner_icons_trixroma_faistos.svg"
+                  style="max-width: 200px; max-height: 200px"
+                />
+              </div>
+              <div class="flex-child-container">
+                <span>{{ languageConfig.properties.get("about_card1") }}</span>
+              </div>
             </div>
 
-            <div class="container" style="text-align: center;padding-top:10px">
-                <div class="row">
-                    <div class="col-sm-12 col-md-6" style="text-align:left">
-
-                        <div class="flex-div-container">
-                            <div style="width:30%">
-                                <img src="../../assets/img/inner_icons_trixroma_faistos.svg"
-                                    style="max-width:200px;max-height: 200px;">
-                            </div>
-                            <div class="flex-child-container">
-                                <span>{{languageConfig.properties.get('about_card1')}}</span>
-                            </div>
-                        </div>
-
-                        <div class="flex-div-container">
-                            <div style="width:30%">
-                                <img src="../../assets/img/inner_icons_trixroma_gorges.svg"
-                                    style="max-width:200px;max-height: 200px;">
-                            </div>
-                            <div class="flex-child-container">
-                                <span style="font-family: 'Tilt Prism', cursive;font-size:3.8rem">36</span><br>
-                                <span>{{languageConfig.properties.get('about_card2')}}</span>
-                            </div>
-                        </div>
-
-                        <div style="display:flex;justify-content: center;align-items: center;">
-                            <div style="width:30%">
-                                <img src="../../assets/img/inner_icons_trixroma_paths.svg"
-                                    style="max-width:200px;max-height: 200px;">
-                            </div>
-                            <div class="flex-child-container">
-                                <span>{{languageConfig.properties.get('about_card3')}}</span>
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="col-sm-12 col-md-6">
-                        <img src="../../assets/img/crete_dark_map-black.png" class="d-block w-100" style="max-width:600px"
-                            alt="...">
-                    </div>
-                </div>
+            <div class="flex-div-container">
+              <div style="width: 30%">
+                <img
+                  src="../../assets/img/inner_icons_trixroma_gorges.svg"
+                  style="max-width: 200px; max-height: 200px"
+                />
+              </div>
+              <div class="flex-child-container">
+                <span
+                  style="font-family: 'Tilt Prism', cursive; font-size: 3.8rem"
+                  >36</span
+                ><br />
+                <span>{{ languageConfig.properties.get("about_card2") }}</span>
+              </div>
             </div>
+
+            <div
+              style="
+                display: flex;
+                justify-content: center;
+                align-items: center;
+              "
+            >
+              <div style="width: 30%">
+                <img
+                  src="../../assets/img/inner_icons_trixroma_paths.svg"
+                  style="max-width: 200px; max-height: 200px"
+                />
+              </div>
+              <div class="flex-child-container">
+                <span>{{ languageConfig.properties.get("about_card3") }}</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-12 col-md-6">
+            <img
+              src="../../assets/img/crete_dark_map-black.png"
+              class="d-block w-100"
+              style="max-width: 600px"
+              alt="..."
+            />
+          </div>
         </div>
-
+      </div>
     </div>
 
     <div class="card-container">
-        <div class="container header-container" style="text-align: center;">
-            <h1>{{languageConfig.properties.get('about_places_header')}}</h1>
-        </div>
-        <div class="container" style="width:100%">
-            <div class="row animationContainer">
-                <div class="col-md-6 col-sm-12 col-lg-6 slide-in from-left">
-                    <div class="card">
-                        <img src="../../assets/img/crete_chania.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h1 class="card-title">{{languageConfig.properties.get('about_places_card1_title')}}</h1>
-                            <div class="container-hashtags">
-                                <a class="card-hashtag" style="background-color: #c98066;"
-                                    href="https://www.visitgreece.gr/experiences/?Category=Culture&Destination=Chania"
-                                    target="_blank">CULTURE</a>
-                                <a class="card-hashtag" style="background-color: #70ba8e;"
-                                    href="https://www.visitgreece.gr/experiences/?Category=Nature&Destination=Chania"
-                                    target="_blank">NATURE</a>
-                                <a class="card-hashtag" style="background-color: #dd7299;"
-                                    href="https://www.visitgreece.gr/experiences/?Category=Gastronomy&Destination=Chania"
-                                    target="_blank">GASTRONOMY</a>
-                            </div>
-                            <p class="card-text">{{languageConfig.properties.get('about_places_card1_body')}}</p>
-                            <a href="https://www.visitgreece.gr/islands/crete/chania/" target="_blank"
-                                class="btn btn-info" style="border-radius: 20px;">{{languageConfig.properties.get('about_places_card1_btn')}}</a>
-                        </div>
-                    </div>
+      <div class="container header-container" style="text-align: center">
+        <h1>{{ languageConfig.properties.get("about_places_header") }}</h1>
+      </div>
+      <div class="container" style="width: 100%">
+        <div class="row animationContainer">
+          <div class="col-md-6 col-sm-12 col-lg-6 fade-in">
+            <div class="card">
+              <img
+                src="../../assets/img/crete_chania.jpg"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h1 class="card-title">
+                  {{
+                    languageConfig.properties.get("about_places_card1_title")
+                  }}
+                </h1>
+                <div class="container-hashtags">
+                  <a
+                    class="card-hashtag"
+                    style="background-color: #c98066"
+                    href="https://www.visitgreece.gr/experiences/?Category=Culture&Destination=Chania"
+                    target="_blank"
+                    >CULTURE</a
+                  >
+                  <a
+                    class="card-hashtag"
+                    style="background-color: #70ba8e"
+                    href="https://www.visitgreece.gr/experiences/?Category=Nature&Destination=Chania"
+                    target="_blank"
+                    >NATURE</a
+                  >
+                  <a
+                    class="card-hashtag"
+                    style="background-color: #dd7299"
+                    href="https://www.visitgreece.gr/experiences/?Category=Gastronomy&Destination=Chania"
+                    target="_blank"
+                    >GASTRONOMY</a
+                  >
                 </div>
-                <div class="col-md-6 col-sm-12 col-lg-6 animated slide-in from-left">
-                    <div class="card">
-                        <img src="../../assets/img/crete_rethymno.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h1 class="card-title">{{languageConfig.properties.get('about_places_card2_title')}}</h1>
-                            <div class="container-hashtags">
-                                <a class="card-hashtag" style="background-color:#43b3ba;"
-                                    href="https://www.visitgreece.gr/experiences/?Category=Leisure&Destination=Rethymno"
-                                    target="_blank">LEISURE</a>
-                                <a class="card-hashtag" style="background-color: #70ba8e;"
-                                    href="https://www.visitgreece.gr/experiences/?Category=Nature&Destination=Rethymno"
-                                    target="_blank">NATURE</a>
-                                <a class="card-hashtag" style="background-color: #c98066;"
-                                    hreft="https://www.visitgreece.gr/experiences/?Category=Culture&Destination=Rethymno"
-                                    target="_blank">CULTURE</a>
-                            </div>
-                            <p class="card-text">{{languageConfig.properties.get('about_places_card2_body')}}</p>
-                            <a href="https://www.visitgreece.gr/islands/crete/rethymno/" target="_blank"
-                                class="btn btn-info" style="border-radius: 20px;">{{languageConfig.properties.get('about_places_card2_btn')}}</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-sm-12 col-lg-6 animated slide-in from-left">
-                    <div class="card">
-                        <img src="../../assets/img/crete_herakion.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h1 class="card-title">{{languageConfig.properties.get('about_places_card3_title')}}</h1>
-                            <div class="container-hashtags">
-                                <a class="card-hashtag" style="background-color: #c98066;"
-                                    href="https://www.visitgreece.gr/experiences/?Category=Culture&Destination=Heraklion"
-                                    target="_blank">CULTURE</a>
-                                <a class="card-hashtag" style="background-color: #dd7299;"
-                                    href="https://www.visitgreece.gr/experiences/?Category=Gastronomy&Destination=Heraklion"
-                                    target="_blank">GASTRONOMY</a>
-                            </div>
-                            <p class="card-text">{{languageConfig.properties.get('about_places_card3_body')}}</p>
-                            <a href="https://www.visitgreece.gr/islands/crete/irakleio/" target="_blank"
-                                class="btn btn-info" style="border-radius: 20px;">{{languageConfig.properties.get('about_places_card3_btn')}}</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-sm-12 col-lg-6 animated slide-in from-left">
-                    <div class="card">
-                        <img src="../../assets/img/crete_agios_nikolaos.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h1 class="card-title">{{languageConfig.properties.get('about_places_card4_title')}}</h1>
-                            <div class="container-hashtags">
-                                <a class="card-hashtag" style="background-color: #70ba8e;"
-                                    href="https://www.visitgreece.gr/experiences/?Category=Nature&Destination=Agios%20Nikolaos"
-                                    target="_blank">NATURE</a>
-                            </div>
-                            <p class="card-text">{{languageConfig.properties.get('about_places_card4_body')}}</p>
-                            <a href="https://www.visitgreece.gr/islands/crete/agios-nikolaos/" target="_blank"
-                                class="btn btn-md btn-info" style="border-radius: 20px;">{{languageConfig.properties.get('about_places_card4_btn')}}</a>
-                        </div>
-                    </div>
-                </div>
+                <p class="card-text">
+                  {{ languageConfig.properties.get("about_places_card1_body") }}
+                </p>
+                <a
+                  href="https://www.visitgreece.gr/islands/crete/chania/"
+                  target="_blank"
+                  class="btn btn-info"
+                  style="border-radius: 20px"
+                  >{{
+                    languageConfig.properties.get("about_places_card1_btn")
+                  }}</a
+                >
+              </div>
             </div>
+          </div>
+          <div class="col-md-6 col-sm-12 col-lg-6 fade-in">
+            <div class="card">
+              <img
+                src="../../assets/img/crete_rethymno.jpg"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h1 class="card-title">
+                  {{
+                    languageConfig.properties.get("about_places_card2_title")
+                  }}
+                </h1>
+                <div class="container-hashtags">
+                  <a
+                    class="card-hashtag"
+                    style="background-color: #43b3ba"
+                    href="https://www.visitgreece.gr/experiences/?Category=Leisure&Destination=Rethymno"
+                    target="_blank"
+                    >LEISURE</a
+                  >
+                  <a
+                    class="card-hashtag"
+                    style="background-color: #70ba8e"
+                    href="https://www.visitgreece.gr/experiences/?Category=Nature&Destination=Rethymno"
+                    target="_blank"
+                    >NATURE</a
+                  >
+                  <a
+                    class="card-hashtag"
+                    style="background-color: #c98066"
+                    hreft="https://www.visitgreece.gr/experiences/?Category=Culture&Destination=Rethymno"
+                    target="_blank"
+                    >CULTURE</a
+                  >
+                </div>
+                <p class="card-text">
+                  {{ languageConfig.properties.get("about_places_card2_body") }}
+                </p>
+                <a
+                  href="https://www.visitgreece.gr/islands/crete/rethymno/"
+                  target="_blank"
+                  class="btn btn-info"
+                  style="border-radius: 20px"
+                  >{{
+                    languageConfig.properties.get("about_places_card2_btn")
+                  }}</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-sm-12 col-lg-6 fade-in">
+            <div class="card">
+              <img
+                src="../../assets/img/crete_herakion.jpg"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h1 class="card-title">
+                  {{
+                    languageConfig.properties.get("about_places_card3_title")
+                  }}
+                </h1>
+                <div class="container-hashtags">
+                  <a
+                    class="card-hashtag"
+                    style="background-color: #c98066"
+                    href="https://www.visitgreece.gr/experiences/?Category=Culture&Destination=Heraklion"
+                    target="_blank"
+                    >CULTURE</a
+                  >
+                  <a
+                    class="card-hashtag"
+                    style="background-color: #dd7299"
+                    href="https://www.visitgreece.gr/experiences/?Category=Gastronomy&Destination=Heraklion"
+                    target="_blank"
+                    >GASTRONOMY</a
+                  >
+                </div>
+                <p class="card-text">
+                  {{ languageConfig.properties.get("about_places_card3_body") }}
+                </p>
+                <a
+                  href="https://www.visitgreece.gr/islands/crete/irakleio/"
+                  target="_blank"
+                  class="btn btn-info"
+                  style="border-radius: 20px"
+                  >{{
+                    languageConfig.properties.get("about_places_card3_btn")
+                  }}</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-sm-12 col-lg-6 fade-in">
+            <div class="card">
+              <img
+                src="../../assets/img/crete_agios_nikolaos.jpg"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h1 class="card-title">
+                  {{
+                    languageConfig.properties.get("about_places_card4_title")
+                  }}
+                </h1>
+                <div class="container-hashtags">
+                  <a
+                    class="card-hashtag"
+                    style="background-color: #70ba8e"
+                    href="https://www.visitgreece.gr/experiences/?Category=Nature&Destination=Agios%20Nikolaos"
+                    target="_blank"
+                    >NATURE</a
+                  >
+                </div>
+                <p class="card-text">
+                  {{ languageConfig.properties.get("about_places_card4_body") }}
+                </p>
+                <a
+                  href="https://www.visitgreece.gr/islands/crete/agios-nikolaos/"
+                  target="_blank"
+                  class="btn btn-md btn-info"
+                  style="border-radius: 20px"
+                  >{{
+                    languageConfig.properties.get("about_places_card4_btn")
+                  }}</a
+                >
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
 
     <div class="parent-container">
-        <div class="container header-center-container">
-            <h1>{{languageConfig.properties.get('about_crete_title')}}</h1>
-        </div>
-        <div class="details-container">
-            <p>{{languageConfig.properties.get('about_crete_subheader')}}</p>
-            <p class="fade-in">
-                <span class="reason-header">{{languageConfig.properties.get('about_crete_card1_title')}}</span><br>
-                <span>{{languageConfig.properties.get('about_crete_card1_body')}}</span>
-            </p>
-            <p class="fade-in">
-                <span class="reason-header">{{languageConfig.properties.get('about_crete_card2_title')}}</span><br>
-                <span [ngStyle]="{'color': hideInfoDetails ? 'rgb(81, 80, 80)' : 'rgb(155, 155, 155)'}">
-                    {{languageConfig.properties.get('about_crete_card2_body')}}
-                </span>
-                <span [hidden]="hideInfoDetails"> {{languageConfig.properties.get('about_crete_card2_body_fade')}}</span>
-            </p>
-            <p [hidden]="hideInfoDetails" class="fade-in">
-                <span class="reason-header">{{languageConfig.properties.get('about_crete_card3_title')}}</span><br>
-                <span>{{languageConfig.properties.get('about_crete_card3_body')}}</span>
-            </p>
-            <p [hidden]="hideInfoDetails" class="fade-in">
-                <span class="reason-header">{{languageConfig.properties.get('about_crete_card4_title')}}</span><br>
-                <span>{{languageConfig.properties.get('about_crete_card4_body')}}</span>
-            </p>
-            <p [hidden]="hideInfoDetails" class="fade-in">
-                <span class="reason-header">{{languageConfig.properties.get('about_crete_card5_title')}}</span><br>
-                <span>{{languageConfig.properties.get('about_crete_card5_body')}}</span>
-            </p>
-            <p [hidden]="hideInfoDetails" class="fade-in">
-                <span class="reason-header">{{languageConfig.properties.get('about_crete_card6_title')}}</span><br>
-                <span>{{languageConfig.properties.get('about_crete_card6_body')}}</span>
-            </p>
-            <p [hidden]="hideInfoDetails" class="fade-in">
-                <span class="reason-header">{{languageConfig.properties.get('about_crete_card7_title')}}</span><br>
-                <span>{{languageConfig.properties.get('about_crete_card7_body')}}</span>
-            </p>
-            <p [hidden]="hideInfoDetails" class="fade-in">
-                <span class="reason-header">{{languageConfig.properties.get('about_crete_card8_title')}}</span><br>
-                <span>{{languageConfig.properties.get('about_crete_card8_body')}}</span>
-            </p>
-            <p [hidden]="hideInfoDetails" class="fade-in">
-                <span class="reason-header">{{languageConfig.properties.get('about_crete_card9_title')}}</span><br>
-                <span>{{languageConfig.properties.get('about_crete_card9_body')}}</span>
-            </p>
-            <p [hidden]="hideInfoDetails" class="fade-in">
-                <span class="reason-header">{{languageConfig.properties.get('about_crete_card10_title')}}</span><br>
-                <span>{{languageConfig.properties.get('about_crete_card10_body')}}</span>
-            </p>
-            <button class="btn btn-outline-info" (click)="onShowMoreDetails()" [hidden]="!hideInfoDetails">{{languageConfig.properties.get('about_crete_btn_showmore')}} <i
-                    class="bi bi-caret-down-fill" style="padding-left:4px"></i></button>
-            <button class="btn btn-outline-info" (click)="onShowMoreDetails()" [hidden]="hideInfoDetails">{{languageConfig.properties.get('about_crete_btn_showless')}} <i
-                    class="bi bi-caret-up-fill" style="padding-left:4px"></i></button>
-        </div>
+      <div class="container header-center-container">
+        <h1>{{ languageConfig.properties.get("about_crete_title") }}</h1>
+      </div>
+      <div class="details-container">
+        <p>{{ languageConfig.properties.get("about_crete_subheader") }}</p>
+        <p class="fade-in">
+          <span class="reason-header">{{
+            languageConfig.properties.get("about_crete_card1_title")
+          }}</span
+          ><br />
+          <span>{{
+            languageConfig.properties.get("about_crete_card1_body")
+          }}</span>
+        </p>
+        <p class="fade-in">
+          <span class="reason-header">{{
+            languageConfig.properties.get("about_crete_card2_title")
+          }}</span
+          ><br />
+          <span
+            [ngStyle]="{
+              color: hideInfoDetails ? 'rgb(81, 80, 80)' : 'rgb(155, 155, 155)'
+            }"
+          >
+            {{ languageConfig.properties.get("about_crete_card2_body") }}
+          </span>
+          <span [hidden]="hideInfoDetails">
+            {{
+              languageConfig.properties.get("about_crete_card2_body_fade")
+            }}</span
+          >
+        </p>
+        <p [hidden]="hideInfoDetails" class="fade-in">
+          <span class="reason-header">{{
+            languageConfig.properties.get("about_crete_card3_title")
+          }}</span
+          ><br />
+          <span>{{
+            languageConfig.properties.get("about_crete_card3_body")
+          }}</span>
+        </p>
+        <p [hidden]="hideInfoDetails" class="fade-in">
+          <span class="reason-header">{{
+            languageConfig.properties.get("about_crete_card4_title")
+          }}</span
+          ><br />
+          <span>{{
+            languageConfig.properties.get("about_crete_card4_body")
+          }}</span>
+        </p>
+        <p [hidden]="hideInfoDetails" class="fade-in">
+          <span class="reason-header">{{
+            languageConfig.properties.get("about_crete_card5_title")
+          }}</span
+          ><br />
+          <span>{{
+            languageConfig.properties.get("about_crete_card5_body")
+          }}</span>
+        </p>
+        <p [hidden]="hideInfoDetails" class="fade-in">
+          <span class="reason-header">{{
+            languageConfig.properties.get("about_crete_card6_title")
+          }}</span
+          ><br />
+          <span>{{
+            languageConfig.properties.get("about_crete_card6_body")
+          }}</span>
+        </p>
+        <p [hidden]="hideInfoDetails" class="fade-in">
+          <span class="reason-header">{{
+            languageConfig.properties.get("about_crete_card7_title")
+          }}</span
+          ><br />
+          <span>{{
+            languageConfig.properties.get("about_crete_card7_body")
+          }}</span>
+        </p>
+        <p [hidden]="hideInfoDetails" class="fade-in">
+          <span class="reason-header">{{
+            languageConfig.properties.get("about_crete_card8_title")
+          }}</span
+          ><br />
+          <span>{{
+            languageConfig.properties.get("about_crete_card8_body")
+          }}</span>
+        </p>
+        <p [hidden]="hideInfoDetails" class="fade-in">
+          <span class="reason-header">{{
+            languageConfig.properties.get("about_crete_card9_title")
+          }}</span
+          ><br />
+          <span>{{
+            languageConfig.properties.get("about_crete_card9_body")
+          }}</span>
+        </p>
+        <p [hidden]="hideInfoDetails" class="fade-in">
+          <span class="reason-header">{{
+            languageConfig.properties.get("about_crete_card10_title")
+          }}</span
+          ><br />
+          <span>{{
+            languageConfig.properties.get("about_crete_card10_body")
+          }}</span>
+        </p>
+        <button
+          class="btn btn-outline-info"
+          (click)="onShowMoreDetails()"
+          [hidden]="!hideInfoDetails"
+        >
+          {{ languageConfig.properties.get("about_crete_btn_showmore") }}
+          <i class="bi bi-caret-down-fill" style="padding-left: 4px"></i>
+        </button>
+        <button
+          class="btn btn-outline-info"
+          (click)="onShowMoreDetails()"
+          [hidden]="hideInfoDetails"
+        >
+          {{ languageConfig.properties.get("about_crete_btn_showless") }}
+          <i class="bi bi-caret-up-fill" style="padding-left: 4px"></i>
+        </button>
+      </div>
     </div>
 
     <div class="parent-container">
-        <div class="fade-in" style="margin:2px 1rem;padding:20px;background-color:white">
-            <div class="row">
-                <div class="col-sm-12 col-md-6">
-                    <h1 style="color:black;">{{languageConfig.properties.get('about_crete_flv_title')}} <span
-                            style="color:rgb(74, 74, 74);font-family: 'Raleway', sans-serif;"> | {{languageConfig.properties.get('about_crete_flv_subTitle')}}</span></h1>
-                    <a class="btn btn-dark btn-lg" style="font-family: 'Raleway', sans-serif;"
-                        href="https://www.cretangastronomy.gr/" target="_blank">{{languageConfig.properties.get('about_crete_flv_btn')}}</a>
-                </div>
-                <div class="col-sm-12 col-md-6 align-center-sm-mg-top" style="text-align: right;">
-                    <img src="../../assets/img/crete_food.jpg" style="max-height:100px">
-                </div>
-            </div>
+      <div
+        class="fade-in"
+        style="margin: 2px 1rem; padding: 20px; background-color: white"
+      >
+        <div class="row">
+          <div class="col-sm-12 col-md-6">
+            <h1 style="color: black">
+              {{ languageConfig.properties.get("about_crete_flv_title") }}
+              <span
+                style="
+                  color: rgb(74, 74, 74);
+                  font-family: 'Raleway', sans-serif;
+                "
+              >
+                |
+                {{
+                  languageConfig.properties.get("about_crete_flv_subTitle")
+                }}</span
+              >
+            </h1>
+            <a
+              class="btn btn-dark btn-lg"
+              style="font-family: 'Raleway', sans-serif"
+              href="https://www.cretangastronomy.gr/"
+              target="_blank"
+              >{{ languageConfig.properties.get("about_crete_flv_btn") }}</a
+            >
+          </div>
+          <div
+            class="col-sm-12 col-md-6 align-center-sm-mg-top"
+            style="text-align: right"
+          >
+            <img
+              src="../../assets/img/crete_food.jpg"
+              style="max-height: 100px"
+            />
+          </div>
         </div>
+      </div>
     </div>
 
     <div class="bg">
-        <div style="padding-top:4rem;padding-bottom:4rem;text-align: center;">
-            <h1 style="font-family: 'Raleway', sans-serif;">Discover Crete with us</h1>
-        </div>
+      <div style="padding-top: 4rem; padding-bottom: 4rem; text-align: center">
+        <h1 style="font-family: 'Raleway', sans-serif">
+          Discover Crete with us
+        </h1>
+      </div>
     </div>
+  </div>
 </div>

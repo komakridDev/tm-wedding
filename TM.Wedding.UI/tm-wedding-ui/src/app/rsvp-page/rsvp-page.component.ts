@@ -51,7 +51,7 @@ export class RsvpPageComponent implements OnInit, OnDestroy {
     this.submitterSurname = new FormControl('', [Validators.required]);
     this.submitterFullName = new FormControl('');
     this.email = new FormControl('');
-    this.phone = new FormControl('');
+    this.phone = new FormControl('', [Validators.minLength(10), Validators.maxLength(10), Validators.pattern("^69[0-9]*")]);
     this.peopleCount = new FormControl(1);
     this.subscribeFlag = new FormControl(false);
     this.comments = new FormControl('');

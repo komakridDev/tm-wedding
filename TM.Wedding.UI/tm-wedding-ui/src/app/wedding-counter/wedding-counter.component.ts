@@ -78,6 +78,7 @@ export class WeddingCounterComponent
   tickTock() {
     this.date = new Date();
     this.now = this.date.getTime();
+
     if (
       this.days &&
       this.hours &&
@@ -85,22 +86,50 @@ export class WeddingCounterComponent
       this.seconds &&
       this.difference
     ) {
-      if (19 - this.date.getHours() < 0) {
-        this.days.nativeElement.innerText = Math.floor(this.difference) - 1;
-        this.hours.nativeElement.innerText = 24 + (19 - this.date.getHours());
-      } else {
-        this.days.nativeElement.innerText = Math.floor(this.difference);
-        this.hours.nativeElement.innerText = 19 - this.date.getHours();
-      }
 
-      this.minutes.nativeElement.innerText = 60 - this.date.getMinutes();
+      const minutesLeftOver = (29 - this.date.getMinutes())>0;
+      const remainingMinutes = minutesLeftOver ? 29 - this.date.getMinutes() : 89 - this.date.getMinutes();
+      this.minutes.nativeElement.innerText = remainingMinutes === 60 ? 0 : remainingMinutes;
       this.seconds.nativeElement.innerText = 60 - this.date.getSeconds();
+
+      if(minutesLeftOver){
+        const hourOffset = remainingMinutes === 60 ? 20 : 19;
+        if (hourOffset - this.date.getHours() < 0) {
+          this.days.nativeElement.innerText = Math.floor(this.difference) - 1;
+          this.hours.nativeElement.innerText = 24 + (hourOffset - this.date.getHours());
+        } else {
+          this.days.nativeElement.innerText = Math.floor(this.difference);
+          this.hours.nativeElement.innerText = hourOffset - this.date.getHours();
+        }
+      }else{
+        const hourOffset = remainingMinutes === 60 ? 19 : 18;
+        if (hourOffset - this.date.getHours() < 0) {
+          this.days.nativeElement.innerText = (Math.floor(this.difference) - 1)>0 ? (Math.floor(this.difference) - 1) : 0;
+          this.hours.nativeElement.innerText = 24 + (hourOffset - this.date.getHours());
+        } else {
+          this.days.nativeElement.innerText = Math.floor(this.difference);
+          this.hours.nativeElement.innerText = hourOffset - this.date.getHours();
+        }
+      }
 
       this.setProgressBar(
         Math.floor(this.difference),
         23 - this.date.getHours(),
         60 - this.date.getMinutes()
       );
+
+      if(this.difference<0){
+        this.days.nativeElement.innerText = 0;
+        this.hours.nativeElement.innerText = 0;
+        this.minutes.nativeElement.innerText = 0;
+        this.seconds.nativeElement.innerText = 0;
+
+        this.setProgressBar(
+          0,
+          0,
+          0
+        );
+      }
     }
   }
 
@@ -121,4 +150,5 @@ export class WeddingCounterComponent
       }
     }
   }
+
 }

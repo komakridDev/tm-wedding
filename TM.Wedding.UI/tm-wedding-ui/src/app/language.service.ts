@@ -516,7 +516,7 @@ export class LanguageService {
     this.greekConfig.properties.set('thank_you', 'Σας ευχαριστούμε');
     this.greekConfig.properties.set('contact_submit_banner', 'Θα επικοινωνήσουμε μαζί σας το συντομότερο δυνατόν');
     this.greekConfig.properties.set('thankyou_banner_positive', 'Είμαστε πολύ χαρούμενοι που θα είστε μαζί μας και σας περιμένουμε να το γιορτάσουμε');
-    this.greekConfig.properties.set('thankyou_banner_negative', 'Λυπόμαστε που δεν θα είσαστε μαζί σας αλλά σας ευχαριστούμε για την απάντησή σας');
+    this.greekConfig.properties.set('thankyou_banner_negative', 'Ευχαριστούμε για την απάντηση');
 
     //Header
     this.englishConfig.properties = new Map<string, string>();
